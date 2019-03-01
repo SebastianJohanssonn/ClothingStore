@@ -5,6 +5,7 @@
 <?php
     echo "<table style='border: solid 1px black;'>";
     echo "<tr><th>Name</th><th>Price</th></tr>";
+    
 
 class TableRows extends RecursiveIteratorIterator { 
     function __construct($it) { 
@@ -13,10 +14,11 @@ class TableRows extends RecursiveIteratorIterator {
 
     function current() {
         return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+        ;
     }
 
     function beginChildren() { 
-        echo "<tr>"; 
+        echo "<tr> "; 
     } 
 
     function endChildren() { 
@@ -32,7 +34,7 @@ $dbname = "clothingstore";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM products"); 
+    $stmt = $conn->prepare("SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imageID"); 
     $stmt->execute();
 
     // set the resulting array to associative
