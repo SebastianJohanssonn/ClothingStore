@@ -16,7 +16,6 @@ $sql = "SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imag
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>ID</th><th>Name</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
