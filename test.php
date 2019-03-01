@@ -1,22 +1,29 @@
+
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "clothingstore";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-$connect = mysqli_connect("localhost", "root","","clothingstore")
+$sql = "SELECT * FROM Image";
+$result = $conn->query($sql);
 
-$query = "SELECT *FROM picture order by imageId desc";
-$result =  mysqli_query($connect, $query);
-dd($result;)
-while($row = mysqli_fetch_array($result))
-     {
-         echo ' 
-            <tr>
-                <td>
-                        <img src="data:image/jpeg;base64; ' .base64_encode($row['name']).'"/>
-                </td>
-         
-            </tr>
-         '
-     }
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>ID</th><th>Name</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+$conn->close();
 ?>
-
-
