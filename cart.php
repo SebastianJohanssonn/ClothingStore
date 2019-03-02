@@ -11,16 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_SESSION["shoppingCart"])) {
         $shoppingCart = json_decode($_SESSION["shoppingCart"]);
     } else {
-        $shoppingCart = array();
+        $shoppingCart = json_decode("{}");
     }
 
-    if (isset($shoppingCart[$productId])) {
-        $shoppingCart[$productId] = $shoppingCart[$productId] + 1;
+    if (isset($shoppingCart->{$productId})) {
+        $shoppingCart->{$productId} = $shoppingCart->{$productId} + 1;
     } else {
-        $shoppingCart[$productId] = 1;
+        $shoppingCart->{$productId} = 1;
     }
 
     $_SESSION['shoppingCart'] = json_encode($shoppingCart);
+
+    echo json_encode(true);
 } elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
 } else {
