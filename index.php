@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <script src="script.js"></script>
-    </head>
-    <body>
-        <div class="footer">
-        <?php include './includes/footer.php'; ?>
-        </div>
-    </body>
-</html>
+
+    <div class="mainBody">
+        <img src="clothingStoreImg.jpg" alt="imageHomePage">
+        <h2>Our Values</h2>
+        <p id= "valuesText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium provident labore, repellendus voluptate alias quod, obcaecati vitae nihil distinctio ipsum accusamus! Nisi harum rem reprehenderit ipsam numquam voluptatum nostrum dicta?</p>
+    </div>
