@@ -25,17 +25,17 @@ $products = $db->resultset();
 
     <div class="container products">
         <div class="row">
-            <?php foreach ($products as $shoe) {?>
+            <?php foreach ($products as $clothes) {?>
                 <div class="col-md-3 product">
-                    <a href="product.php?id=<?php echo $shoe->productId ?>">
+                    <a href="product.php?id=<?php echo $clothes->productId ?>">
                         <?php echo '<img class="product-image" src="data:image/jpeg;base64,'.base64_encode( $shoe->image ).'"/>'; ?>
                     </a>
                     <div class="product-text">
-                        <?php echo $shoe->name?>
+                        <?php echo $clothes->name?>
                         <div class="product-price">
                             <div class="row">
                                 <div class="col-md-6 text-left">
-                                    <?php echo $shoe->price?> kr
+                                    <?php echo $clothes->price?> kr
 
                                 </div>
                                 <div class="col-md-6 text-right">
