@@ -1,55 +1,45 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?php include ('includes/header.php') ?>
+<?php include ('includes/dbConnect.php') ?>
+
 
 <?php
-    echo "<table style='border: solid 1px black;'>";
-    echo "<tr><th>Name</th><th>Price</th></tr>";
-    
+$id = $_GET['id'];
 
-class TableRows extends RecursiveIteratorIterator { 
-    function __construct($it) { 
-        parent::__construct($it, self::LEAVES_ONLY); 
-    }
 
-    function current() {
-        return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
-        ;
-    }
+$db = new Database;
 
-    function beginChildren() { 
-        echo "<tr> "; 
-    } 
+$db->query( "SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imageID where productID  = $id");
+$product = $db->single();
 
-    function endChildren() { 
-        echo "</tr>" . "\n";
-    } 
-} 
+?>
+<div class ="container">
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "clothingstore";
+    <div class="row">
+        <div class="col-md-8">
+            <?php echo '<img class="product-image-info " src="data:image/jpeg;base64,'.base64_encode( $product->image ).'"/>'; ?>
+        </div>
+        <div class="col-md-4">
+            <br>
+            <h2 class="product-info-name">  <?php echo $product->name?> </h2>
+            <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin.
+                Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd
+                boksättare tog att antal bokstäver och blandade dem för att göra
+                ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden</p>
+            <br>
+           <h4>
+               <?php echo $product->price?> kr
+           </h4>
+            <button class="btn btn-Dark"> Buy</button>
+        </div>
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imageID"); 
-    $stmt->execute();
+    </div>
 
-    // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+    <div>
+        Photo carousel
+    </div>
 
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-        echo $v;
-    }
-}
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-$conn = null;
-echo "</table>";
-?> 
 
-</body>
-</html>
+</div>
+
+<?php include ('includes/footer.php') ?>
+
