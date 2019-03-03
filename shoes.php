@@ -4,7 +4,7 @@
 <?php
 $db = new Database;
 
-$db->query( "SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imageID where categoryID  = 2");
+$db->query( "SELECT * FROM products RIGHT JOIN Image ON products.imageID = image.imageID where categoryID  = 2");
 $products = $db->resultset();
 ?>
 
