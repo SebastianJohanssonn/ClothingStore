@@ -8,7 +8,7 @@ $id = $_GET['id'];
 
 $db = new Database;
 
-$db->query( "SELECT * FROM Products RIGHT JOIN Image ON Products.imageID = Image.imageID where productID  = $id");
+$db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image.imageID where productID  = $id");
 $product = $db->single();
 
 ?>
