@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clothing Store</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php include ('includes/header.php') ?>
+<div class="mainBody">
+    <img src="clothingStoreImg.jpg" alt="imageHomePage">
+    <button onclick="addToShoppingcart(this)" id="1">Add</button>
+    <h2>Shopping Cart</h2>
+</div>
+<?php include ('includes/footer.php') ?>
