@@ -26,7 +26,7 @@
 <body>
 <header>
     <h1 id="headerh1">Clothing Store</h1>
-    <a id="cartLink "href="#"><i id="cart" class="fas fa-shopping-cart"></i></a>
+    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
     <nav>
         <div class="dropdown">
             <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
