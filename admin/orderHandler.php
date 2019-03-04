@@ -37,14 +37,12 @@
                             <td>".$row['UserID']."</td>
                             <td>
                                 <input type='checkbox' id='order" . $row["orderID"] . "' value='".$row['orderID']."'>
-                                <button onclick='setSendStatus(" . $row["orderID"] . ")'>Bekräfta</button>
+                                <button>Bekräfta</button>
                             </td>
                         </tr>
                     ";
                 }   
             }
-
-            return $result;
         }
     }
 
