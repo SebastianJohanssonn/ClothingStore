@@ -13,7 +13,7 @@
 <?php
     include "includes/header.php";
     ?>
-    <h1>Välkommen till Adminsidan!</h1>
+    <h1>Välkommen till Admin sidan!</h1>
     <div id="buttons">
         <button onclick=viewOrders()>Titta ordrar</button>
         <button onclick=viewProducts()>Produkt lista</button>
