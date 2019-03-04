@@ -4,7 +4,7 @@ function addToShoppingcart(addProductButton) {
     var productId = addProductButton.id;
     var queryString = "productId="+productId;
 
-    fetch("cart.php", {
+    fetch("cartBackend.php", {
         method: 'PUT',
         credentials: 'include',
         body: queryString
