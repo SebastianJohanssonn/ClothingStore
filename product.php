@@ -12,6 +12,7 @@ $db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image
 $product = $db->single();
 
 ?>
+<body>
 <div class ="container">
 
     <div class="row">
@@ -40,6 +41,6 @@ $product = $db->single();
 
 
 </div>
-
+</body>
 <?php include ('includes/footer.php') ?>
 
