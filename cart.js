@@ -30,3 +30,17 @@ function deleteFromShoppingcart(deleteProductButton) {
         console.log(json);           
     });
 }
+
+function displayShoppingcart() {
+    
+    var productId = 1;
+
+    fetch("api/get.php?productId="+productId, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);           
+    });
+}
