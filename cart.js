@@ -1,6 +1,6 @@
 
 function addToShoppingcart(addProductButton) {
-
+    console.log('it works!');
     var productId = addProductButton.id;
     var queryString = "productId="+productId;
 
