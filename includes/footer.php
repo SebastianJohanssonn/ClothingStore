@@ -19,7 +19,6 @@ echo ClothingStore(2018);
         <li>01 23 456 789</li>
     </ul>
 </footer>
-</body>
 
 </html>
 

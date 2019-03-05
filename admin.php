@@ -13,6 +13,7 @@
 <?php
     include "includes/header.php";
     ?>
+    <body>
     <h1>Välkommen till Admin sidan!</h1>
     <div id="buttons">
         <button onclick=viewOrders()>Titta ordrar</button>
@@ -23,6 +24,7 @@
     <div id="content">
     
     </div>
+    </body>
 <?php
     include "includes/footer.php";
 ?>

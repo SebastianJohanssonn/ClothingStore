@@ -7,7 +7,7 @@ $db = new Database;
 $db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image.imageID where categoryID  = 4");
 $products = $db->resultset();
 ?>
-
+<body>
 <div class="mainBody">
     <div class="container">
         <div class="row landing">
@@ -49,4 +49,5 @@ $products = $db->resultset();
         </div>
     </div>
 </div>
+</body>
 <?php include ('includes/footer.php') ?>
