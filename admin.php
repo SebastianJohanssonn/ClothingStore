@@ -21,7 +21,19 @@
         <button onclick=logOut()>Logga ut</button>
     </div>
     <div id="content">
-    
+        <template id="orderTemp">
+            <h3>Orders:</h3>
+            <table id ="orders">
+                <tr>
+                    <th>OrderID</th>
+                    <th>CourierID</th>
+                    <th>AdressID</th>
+                    <th>ProductID</th>
+                    <th>UserID</th>
+                </tr>
+                <!-- Rows will inserted here -->
+            </table>
+        </template>
     </div>
 <?php
     include "includes/footer.php";
