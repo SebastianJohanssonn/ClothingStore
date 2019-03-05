@@ -21,7 +21,6 @@
         <button onclick=logOut()>Logga ut</button>
     </div>
     <div id="content">
-    
     </div>
 <?php
     include "includes/footer.php";
