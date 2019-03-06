@@ -1,18 +1,32 @@
 
+function fetchHelper(url, method, callback, queryString = "") {
+
+    if (queryString != "") {
+        var htmlInit = {
+            method: method,
+            credentials: 'include',
+            body: queryString
+        }
+    } else {
+        var htmlInit = {
+            method: method
+        }
+    }
+
+    fetch(url, htmlInit)
+    .then((response) => response.json())
+    .then((json) => {
+        callback(json);
+    });
+
+}
+
 function addToShoppingcart(addProductButton) {
     console.log('it works!');
     var productId = addProductButton.id;
     var queryString = "productId="+productId;
 
-    fetch("cartBackend.php", {
-        method: 'PUT',
-        credentials: 'include',
-        body: queryString
-    })
-    .then((response) => response.json())
-    .then((json) => {
-        console.log(json);           
-    });
+    fetchHelper("cartBackend.php", "PUT", (json) => {console.log(json)}, queryString);
 }
 
 function deleteFromShoppingcart(deleteProductButton) {
@@ -20,64 +34,79 @@ function deleteFromShoppingcart(deleteProductButton) {
     var productId = deleteProductButton.id;
     var queryString = "productId="+productId;
 
-    fetch("cartBackend.php", {
-        method: 'DELETE',
-        credentials: 'include',
-        body: queryString
-    })
-    .then((response) => response.json())
-    .then((json) => {
-        console.log(json);           
-    });
+    fetchHelper("cartBackend.php", "DELETE", (json) => {console.log(json)}, queryString);
 }
 
-function displayShoppingcart() {
-    fetch("cartBackend.php", {
-        method: 'GET'
-    })
-    .then((response) => response.json())
-    .then((shoppingCart) => {
-        console.log(shoppingCart);
-        for (var productId in shoppingCart) {
-            if (shoppingCart[productId] != null) {
-                fetch("api/get.php?productId="+productId, {
-                    method: 'GET',
-                    credentials: 'include'
-                })
-                .then((response) => response.json())
-                .then((productInfo) => {
-                    console.log(productInfo);
-                    var chosenProduct = document.createElement("div");
-                    chosenProduct.classList.add("chosenProduct");
-                    
-                    var chosenProductImage = document.createElement("img");
-                    chosenProductImage.src = "data:image/jpeg;base64," + productInfo["image"];
-                    chosenProduct.appendChild(chosenProductImage);
+function getAndDisplayShoppingcart() {
+    fetchHelper("cartBackend.php", "GET", displayShoppingCart);
+}
 
-                    var nameOfChosenProduct = document.createElement("h3");
-                    nameOfChosenProduct.innerText = productInfo["name"];
-                    chosenProduct.appendChild(nameOfChosenProduct);
+function displayShoppingCart(shoppingCart) {
+    productIdList = getSortedProductIdList(shoppingCart);
+    displayProductList(productIdList);  
+}
 
-                    var priceOfChosenProduct = document.createElement("p");
-                    priceOfChosenProduct.innerText = productInfo["price"] + " kr";
-                    chosenProduct.appendChild(priceOfChosenProduct);
+function displayProductList(productList) {
+    var nextProductId = productList.shift();
+    console.log(nextProductId);
+    if(!isNaN(nextProductId)) {
+        fetchHelper("api/get.php?productId="+nextProductId, "GET", (productInfo) => {
+            addProductToProductContainerDiv(productInfo);
+            displayProductList(productList);
+        })
+    }
+}
 
-                    var deleteButton = document.createElement("button");
-                    deleteButton.classList.add("deleteButton");
-                    deleteButton.id = productInfo["productId"];
-                    deleteButton.innerText = "Delete";
-                    deleteButton.setAttribute("onclick", "deleteFromShoppingcart(this)");
-                    chosenProduct.appendChild(deleteButton);
+function getSortedProductIdList(shoppingCart) {
+    productIdList = [];
+    for (var productId in shoppingCart) {
+        productIdList.push(productId);
+    }
+    productIdList.sort();
+    return productIdList;
+}
 
-                    var productContainer = document.getElementById("divOfChosenProducts");
+function addProductToProductContainerDiv(productInfo) {
+    var chosenProduct = createProductDiv();
 
-                    productContainer.appendChild(chosenProduct);
+    chosenProduct.appendChild(createProductIgame(productInfo));
+    chosenProduct.appendChild(createProductName(productInfo));
+    chosenProduct.appendChild(createProductPrice(productInfo));
+    chosenProduct.appendChild(createDeleteButton(productInfo));
 
+    var productContainer = document.getElementById("divOfChosenProducts");
+    productContainer.appendChild(chosenProduct);
+}
 
-                });
-            } 
-        }   
-    });
+function createProductDiv() {
+    var productDiv = document.createElement("div");
+    productDiv.classList.add("chosenProduct");
+    return productDiv;
+}
 
+function createProductIgame(productInfo) {
+    var chosenProductImage = document.createElement("img");
+    chosenProductImage.src = "data:image/jpeg;base64," + productInfo["image"];
+    return chosenProductImage;
+}
 
+function createProductName(productInfo) {
+    var nameOfChosenProduct = document.createElement("h3");
+    nameOfChosenProduct.innerText = productInfo["name"];
+    return nameOfChosenProduct;
+}
+
+function createProductPrice(productInfo) {
+    var priceOfChosenProduct = document.createElement("p");
+    priceOfChosenProduct.innerText = productInfo["price"] + " kr";
+    return priceOfChosenProduct;
+}
+
+function createDeleteButton(productInfo) {
+    var deleteButton = document.createElement("button");
+    deleteButton.classList.add("deleteButton");
+    deleteButton.id = productInfo["productId"];
+    deleteButton.innerText = "Delete";
+    deleteButton.setAttribute("onclick", "deleteFromShoppingcart(this)");
+    return deleteButton;
 }
