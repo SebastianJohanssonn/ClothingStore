@@ -38,7 +38,7 @@
             <a href="clothes.php">Clothes</a>
             <a href="accesories.php">Accesories</a>
             <a href="shoes.php">Shoes</a>
-            <a href="login.php">Log in</a>
+            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         </div>
     </nav>
