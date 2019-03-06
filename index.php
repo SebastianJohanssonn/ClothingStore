@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="homePage.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="cart.js"></script>
     <script>
         $(document).ready(function(){
@@ -88,27 +87,8 @@
     <h2>Our Values</h2>
     <p id= "valuesText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium provident labore, repellendus voluptate alias quod, obcaecati vitae nihil distinctio ipsum accusamus! Nisi harum rem reprehenderit ipsam numquam voluptatum nostrum dicta?</p>
 </div>
-<?php
-function ClothingStore($startYear) {
-    $currentYear = date('Y');
-    if ($startYear < $currentYear) {
-        $currentYear = date('y');
-        return "&copy; $startYear&ndash;$currentYear";
-    } else {
-        return "&copy; $startYear";
-    }
-}
 
-?>
-
-<footer>
-    <ul>
-        <li>info@cs.com</li>
-        <li id=footerYear> <?php echo ClothingStore(2018); ?></li>
-        <li>01 23 456 789</li>
-    </ul>
-</footer>
 </body>
-
+<?php include ('includes/footer.php') ?>
 </html>
 
