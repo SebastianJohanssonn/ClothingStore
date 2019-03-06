@@ -1,10 +1,5 @@
 <?php include('functions.php') ?>
 <?php include ('includes/header.php') ?>
-<<<<<<< HEAD
-<body>
-<div class="mainBody">
-<h2>Register </h2>
-=======
 <div class="mainBody">
 		<h2>Register</h2>
 	<form method="post" action="register.php">
@@ -34,7 +29,6 @@
 			Already a member? <a href="login.php">Sign in</a>
 		</p>
 	</form>
->>>>>>> AliBranchLoginAndRegister
 </div>
 </body>
 <?php include ('includes/footer.php') ?>

@@ -1,11 +1,5 @@
 <?php include('functions.php') ?>
 <?php include ('includes/header.php') ?>
-<<<<<<< HEAD
-<body>
-<div class="mainBody">
-    <h2>Logg in </h2>
-</div>
-=======
 
 
 <div class="mainBody">
@@ -29,7 +23,6 @@
 </form>
 </div>
 
->>>>>>> AliBranchLoginAndRegister
 </body>
 <?php include ('includes/footer.php') ?>
 </html>
