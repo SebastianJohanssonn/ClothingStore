@@ -1,7 +1,6 @@
 #divOfChosenProducts{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .chosenProduct{
@@ -12,4 +11,15 @@
 .chosenProduct img{
     width: 200px;
     height: 300px;
+}
+
+.deleteButton{
+    border: 1px solid #000;
+    font-family: 'Verdana';
+    color: #000;
+    background-color: #fff;
+}
+
+.price{
+    
 }
