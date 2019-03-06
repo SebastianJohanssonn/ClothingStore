@@ -41,6 +41,7 @@
             <a href="shoes.php">Shoes</a>
             <a href="login.php" target="_bottom">Log in</a>
             <a href="register.php">Register</a>
+            <a href="newsletter.html">Subscribe for newsletter</a>
         </div>
     </nav>
 </header>

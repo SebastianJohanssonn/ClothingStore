@@ -78,6 +78,7 @@
             <a href="accesories.php">Accesories</a>
             <a href="shoes.php">Shoes</a>
             <a href="register.php">Register</a>
+            <a href="newsletter.html">Subscribe for newsletter</a>
         </div>
     </nav>
 </header>
