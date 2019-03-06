@@ -1,5 +1,6 @@
 <?php include ('includes/header.php') ?>
 <?php include ('includes/dbConnect.php') ?>
+<?php include('functions.php') ?>
 
 <?php
 $db = new Database;
