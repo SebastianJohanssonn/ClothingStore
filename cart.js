@@ -33,7 +33,7 @@ function deleteFromShoppingcart(deleteProductButton) {
 
 function displayShoppingcart() {
     
-    var productId = 1;
+    var productId = 16;
 
     fetch("api/get.php?productId="+productId, {
         method: 'GET',

@@ -1,5 +1,5 @@
 <?php include ('includes/header.php') ?>
-<body>
+<body onload="displayShoppingcart()">
 <div class="mainBody">
     <h2>Shopping Cart</h2>
     <button id="1" onclick="deleteFromShoppingcart(this)">Delete</button>
