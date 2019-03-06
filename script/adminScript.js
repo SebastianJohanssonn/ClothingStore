@@ -15,7 +15,7 @@ function makeRequest(url, method, formdata, callback){
 
 function viewOrders(){
     var requestData = new FormData();
-    requestData.append("collectionType", "order");
+    requestData.append("collectionType", "orders");
     requestData.append("action", "get");
     
     makeRequest("./admin/requestHandler.php", "POST", requestData, function(response) {
@@ -43,7 +43,7 @@ function viewOrders(){
             tableRow.appendChild(tdUserId);
 
             tdOrderId.innerText = order.orderID;
-            tdCourierId.innerText = order.courierId;
+            tdCourierId.innerText = order.courierID;
             tdAdressId.innerText = order.adressID;
             tdProductId.innerText = order.productID;
             tdUserId.innerText = order.UserID;
@@ -57,18 +57,46 @@ function viewOrders(){
 }
 
 function viewProducts(){
-    $.ajax({
-        url: "./admin/products.php",
-        method: "POST",
-        success: function(results){
-            $("#content").html(results)
-        },
-        error: function(err){
-            alert("PROBLEM");
-        }
-    })
-}
+    var requestData = new FormData();
+    requestData.append("collectionType", "products");
+    requestData.append("action", "get");
+    
+    makeRequest("./admin/requestHandler.php", "POST", requestData, function(response) {
+        console.log(response);
+        var divContent = document.getElementById("content");
+        var productTemp = document.getElementById("productTemp");
+        var clone = document.importNode(productTemp.content, true);
+        divContent.appendChild(clone);
 
+        var productTable = document.getElementById("products");
+        
+        for (var product of response) {
+
+            var tableRow = document.createElement("tr");
+            var tdProductId = document.createElement("td");
+            var tdName = document.createElement("td");
+            var tdPrice = document.createElement("td");
+            var tdImageId = document.createElement("td");
+            var tdCategoryId = document.createElement("td");
+            
+            tableRow.appendChild(tdProductId);
+            tableRow.appendChild(tdName);
+            tableRow.appendChild(tdPrice);
+            tableRow.appendChild(tdImageId);
+            tableRow.appendChild(tdCategoryId);
+
+            tdProductId.innerText = product.productId;
+            tdName.innerText = product.name;
+            tdPrice.innerText = product.price;
+            tdImageId.innerText = product.imageId;
+            tdCategoryId.innerText = product.categoryId;
+
+            productTable.appendChild(tableRow);
+            
+        }
+        
+    });
+}
 function viewSubscribers(){
     $.ajax({
         url: "./admin/subscribers.php",

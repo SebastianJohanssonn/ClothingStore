@@ -12,7 +12,7 @@
 <body>
 <?php
     include "includes/header.php";
-    ?>
+?>
     <h1>Välkommen till Admin sidan!</h1>
     <div id="buttons">
         <button onclick=viewOrders()>Titta ordrar</button>
@@ -30,6 +30,19 @@
                     <th>AdressID</th>
                     <th>ProductID</th>
                     <th>UserID</th>
+                </tr>
+                <!-- Rows will inserted here -->
+            </table>
+        </template>
+        <template id="productTemp">
+            <h3>Products:</h3>
+            <table id ="products">
+                <tr>
+                    <th>ProductID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>ImageID</th>
+                    <th>categoryID</th>
                 </tr>
                 <!-- Rows will inserted here -->
             </table>
