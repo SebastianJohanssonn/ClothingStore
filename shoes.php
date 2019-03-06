@@ -8,9 +8,6 @@ $db = new Database;
 $db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image.imageID where categoryID  = 2");
 $products = $db->resultset();
 ?>
-<<<<<<< HEAD
-<body>
-=======
 <?php  if (isset($_SESSION['user'])) : ?>
                     
 <strong><?php echo $_SESSION['user']['username']; ?></strong>
@@ -23,7 +20,6 @@ $products = $db->resultset();
 
 <?php endif ?>
 
->>>>>>> AliBranchLoginAndRegister
 <div class="mainBody">
     <div class="container">
         <div class="row landing">
