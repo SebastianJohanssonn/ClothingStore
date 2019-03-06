@@ -43,6 +43,7 @@
                     <th>Price</th>
                     <th>ImageID</th>
                     <th>categoryID</th>
+                    <th>UnitsInStock</th>
                 </tr>
                 <!-- Rows will inserted here -->
             </table>

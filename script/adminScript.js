@@ -78,18 +78,21 @@ function viewProducts(){
             var tdPrice = document.createElement("td");
             var tdImageId = document.createElement("td");
             var tdCategoryId = document.createElement("td");
+            var tdUnitsInStock = document.createElement("td");
             
             tableRow.appendChild(tdProductId);
             tableRow.appendChild(tdName);
             tableRow.appendChild(tdPrice);
             tableRow.appendChild(tdImageId);
             tableRow.appendChild(tdCategoryId);
+            tableRow.appendChild(tdUnitsInStock);
 
             tdProductId.innerText = product.productId;
             tdName.innerText = product.name;
             tdPrice.innerText = product.price;
             tdImageId.innerText = product.imageId;
             tdCategoryId.innerText = product.categoryId;
+            tdUnitsInStock.innerText = product.unitsInStock;
 
             productTable.appendChild(tableRow);
             
