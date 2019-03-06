@@ -1,0 +1,15 @@
+#divOfChosenProducts{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.chosenProduct{
+    display: flex;
+    flex-direction: column;
+}
+
+.chosenProduct img{
+    width: 200px;
+    height: 300px;
+}

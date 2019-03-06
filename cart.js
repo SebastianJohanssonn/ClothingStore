@@ -32,15 +32,26 @@ function deleteFromShoppingcart(deleteProductButton) {
 }
 
 function displayShoppingcart() {
-    
-    var productId = 16;
-
-    fetch("api/get.php?productId="+productId, {
-        method: 'GET',
-        credentials: 'include'
+    fetch("cartBackend.php", {
+        method: 'GET'
     })
     .then((response) => response.json())
-    .then((json) => {
-        console.log(json);           
+    .then((shoppingCart) => {
+        console.log(shoppingCart);
+        for (var productId in shoppingCart) {
+
+            fetch("api/get.php?productId="+productId, {
+                method: 'GET',
+                credentials: 'include'
+            })
+            .then((response) => response.json())
+            .then((productInfo) => {
+                console.log(productInfo);
+                var productContainer = document.getElementById("divOfChosenProducts");           
+            });
+
+        }   
     });
+
+
 }
