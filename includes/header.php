@@ -11,6 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="homePage.css">
     <link rel="stylesheet" type="css" href="css/shoppingcart.css">
+    <link rel="stylesheet" type="text/css" href="homePageDesktop.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="cart.js"></script>
@@ -22,24 +23,42 @@
             $(".mainBody, h1, footer").click(function(){
                 $("#dropdown-content1").hide();
             })
+            $("#dropbtnDesktop").hover(function(){
+                $(".dropdownDesktop").show();
+            });
+            $(".mainBody, h1, footer").hover(function(){
+                $(".dropdownDesktop").hide();
+            })
+            
         });
     </script>
 </head>
 
 <header>
+    <a id="cartLink "href="#"><i id="cart" class="fas fa-shopping-cart"></i></a>
     <h1 id="headerh1">Clothing Store</h1>
-    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
-    <nav>
+    <nav class="mobileNav">
+
         <div class="dropdown">
             <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
-
         </div>
         <div id="dropdown-content1" class="dropdown-content">
             <a href="clothes.php">Clothes</a>
             <a href="accesories.php">Accesories</a>
             <a href="shoes.php">Shoes</a>
-            <a href="login.php">Log in</a>
+            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         </div>
+    </nav>
+    <nav class="desktopNav">
+        <a href="index.php">Home</a>
+            <span id="dropbtnDesktop">Products</span>
+        <div class="dropdown-content dropdownDesktop">
+            <a href="clothes.php">Clothes</a>
+            <a href="accesories.php">Accesories</a>
+            <a href="shoes.php">Shoes</a>
+        </div>
+        <a href="register.php">Register</a>
+
     </nav>
 </header>

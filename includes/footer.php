@@ -8,7 +8,6 @@ function ClothingStore($startYear) {
         return "&copy; $startYear";
     }
 }
-echo ClothingStore(2018);
 
 ?>
 
