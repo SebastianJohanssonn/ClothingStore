@@ -29,14 +29,14 @@
    <header>
    <?php 
 
-    include('functions.php');
+    include ('functions.php');
     
     if (!isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
     }
-       <h1 id="headerh1">Clothing Store
-       
+?>
+    <h1 id="headerh1">Clothing Store</h1>
 		<!-- notification message -->
 		<?php if (isset($_SESSION['success'])) : ?>
 			
