@@ -1,19 +1,26 @@
 <?php
-     class Database {
-        
-        function __construct()
-        {
-            try {
-                $dsn = "mysql:host=localhost;dbname=clothingstore;";
-                $user = "root";
-                $password = "";
+class Database{
 
-                $this->connection = new PDO($dsn, $user, $password, NULL);
-                $this->connection->exec('set names utf8');
-            } 
-            catch(PDOException $error) {
-                throw $error;
-            }
+    // specify your own database credentials
+    private $host = "localhost";
+    private $db_name = "clothingstore";
+    private $username = "root";
+    private $password = "";
+    public $conn;
+
+    // get the database connection
+    public function getConnection(){
+
+        $this->conn = null;
+
+        try{
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        }catch(PDOException $exception){
+            echo "Connection error: " . $exception->getMessage();
         }
+
+        return $this->conn;
     }
+}
 ?>

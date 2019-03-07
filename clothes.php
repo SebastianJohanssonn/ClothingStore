@@ -2,23 +2,16 @@
 <?php include ('includes/dbConnect.php') ?>
 <?php include('functions.php') ?>
 
-<?php
-$db = new Database;
-
-$db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image.imageID where categoryID  = 4");
-$products = $db->resultset();
-?>
-<body>
 <?php  if (isset($_SESSION['user'])) : ?>
-                    
-                    <strong><?php echo $_SESSION['user']['username']; ?></strong>
-                    
-                                        <small>
-                                            <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
-                                            <br>
-                                            <a href="index.php?logout='1'" style="color: red;">logout</a>
-                                        </small>
-                    
+
+    <strong><?php echo $_SESSION['user']['username']; ?></strong>
+
+    <small>
+        <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+        <br>
+        <a href="index.php?logout='1'" style="color: red;">logout</a>
+    </small>
+
 <?php endif ?>
 
 <div class="mainBody">
@@ -37,30 +30,16 @@ $products = $db->resultset();
     </div>
 
     <div class="container products">
-        <div class="row">
-            <?php foreach ($products as $clothes) {?>
-                <div class="col-md-3 product">
-                    <a href="product.php?id=<?php echo $clothes->productId ?>">
-                        <?php echo '<img class="product-image" src="data:image/jpeg;base64,'.base64_encode( $clothes->image ).'"/>'; ?>
-                    </a>
-                    <div class="product-text">
-                        <?php echo $clothes->name?>
-                        <div class="product-price">
-                            <div class="row">
-                                <div class="col-md-6 text-left">
-                                    <?php echo $clothes->price?> kr
-
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <button class="btn btn-light"><i class="fas fa-cart-plus"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php }?>
+        <div id="page-content" class="row">
         </div>
     </div>
 </div>
 </body>
+<script>
+
+</script>
+<script src="js/get-products.js"></script>
+<script src="js/get-single-product.js"></script>
+
+
 <?php include ('includes/footer.php') ?>
