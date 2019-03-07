@@ -39,6 +39,7 @@ function deleteFromShoppingcart(deleteProductButton) {
 
 function getAndDisplayShoppingcart() {
     fetchHelper("cartBackend.php", "GET", displayShoppingCart);
+    addAllChosenProducts();
 }
 
 function displayShoppingCart(shoppingCart) {
@@ -119,10 +120,22 @@ function createNumberOfChosenProduct(productInfo, shoppingCart) {
 }
 
 function addAllChosenProducts() {
-    var divOfNumberOfAllChosenProducts = document.createElement("div");
-    var numberOfAllChosenProducts = document.createElement("p");
 
-    
+    fetchHelper("cartBackend.php", "GET", (shoppingCart) => {
+        var divOfNumberOfAllChosenProducts = document.createElement("div");
+        var numberOfAllChosenProducts = document.createElement("p");
+        var cartIcon = document.getElementById("cart");
+        var number = 0;
+
+        for (var productId in shoppingCart) {
+            number += shoppingCart[productId];
+        }
+
+        numberOfAllChosenProducts.innerText = number;
+        divOfNumberOfAllChosenProducts.appendChild(numberOfAllChosenProducts);
+        cartIcon.appendChild(divOfNumberOfAllChosenProducts);
+    });
+
 }
 
 function createDeleteButton(productInfo) {
