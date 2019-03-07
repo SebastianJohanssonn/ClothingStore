@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
    <html lang="en">
    <head>
        <meta charset="UTF-8">
@@ -28,15 +28,13 @@
    <body>
    <header>
    <?php 
+
     include('functions.php');
-    
-    
     
     if (!isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
     }
-?>
        <h1 id="headerh1">Clothing Store
        
 		<!-- notification message -->
@@ -91,7 +89,6 @@
         <button onclick=viewOrders()>Titta ordrar</button>
         <button onclick=viewProducts()>Produkt lista</button>
         <button onclick=viewSubscribers()>Prenumeranter</button>
-        <button onclick=logOut()>Logga ut</button>
     </div>
     <div id="content">
         <template id="orderTemp">
@@ -137,6 +134,7 @@
             </table>
         </template>
     </div>
+    </body>
 <?php
     include "includes/footer.php";
 ?>
