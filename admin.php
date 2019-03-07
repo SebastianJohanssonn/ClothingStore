@@ -51,6 +51,18 @@
             <input type="text" placeholder="Antal" id="units">
             <button onclick=updateStock()>Uppdatera lagersaldo</button>
         </template>
+        <template id="newsTemp">
+            <h3>Newsletter subscribers:</h3>
+            <table id="newsletter">
+                <tr>
+                    <th>SignUpId</th>
+                    <th>Email</th>
+                    <th>UserID</th>
+                    <th>Name</th>
+                </tr>
+                <!-- Rows will inserted here -->
+            </table>
+        </template>
     </div>
 <?php
     include "includes/footer.php";

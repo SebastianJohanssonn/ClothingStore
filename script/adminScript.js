@@ -117,31 +117,39 @@ function updateStock(){
     location.reload();
 }
 function viewSubscribers(){
-    $.ajax({
-        url: "./admin/subscribers.php",
-        method: "POST",
-        success: function(results){
-            $("#content").html(results)
-        },
-        error: function(err){
-            alert("PROBLEM");
+    var requestData = new FormData();
+    requestData.append("collectionType", "subscribers");
+    requestData.append("action", "get");
+    
+    makeRequest("./api/read.php", "POST", requestData, function(response) {
+        console.log(response);
+        var divContent = document.getElementById("content");
+        var newsTemp = document.getElementById("newsTemp");
+        var clone = document.importNode(newsTemp.content, true);
+        divContent.appendChild(clone);
+
+        var newsTable = document.getElementById("newsletter");
+
+        for(var news of response){
+            var tableRow = document.createElement("tr");
+            var tdSignUpId = document.createElement("td");
+            var tdEmail = document.createElement("td");
+            var tdUserId = document.createElement("td");
+            var tdName = document.createElement("td");
+
+            tableRow.appendChild(tdSignUpId);
+            tableRow.appendChild(tdEmail);
+            tableRow.appendChild(tdUserId);
+            tableRow.appendChild(tdName);
+
+            tdSignUpId.innerText = news.signupID;
+            tdEmail.innerText = news.email;
+            tdUserId.innerText = news.userID;
+            tdName.innerText = news.name;
+
+            newsTable.appendChild(tableRow);
         }
-    })
-}
-
-
-function viewUsers(){
-    $.ajax({
-        url: "./admin/users.php",
-        method: "POST",
-        success: function(results){
-            $("#content").html(results)
-        },
-        error: function(err){
-            alert("PROBLEM");
-            
-       }
-    })
+    });
 }
 
 function logout(){

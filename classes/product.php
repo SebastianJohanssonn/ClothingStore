@@ -2,7 +2,6 @@
     include_once ("../api/databaseHandler.php");
 
     class Product {
-        //private $id;
         function __construct()
         {
             $this->database = new Database();

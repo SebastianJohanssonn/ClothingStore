@@ -1,6 +1,7 @@
 <?php
     include "../classes/order.php";
     include "../classes/product.php";
+    include "../classes/newsletter.php";
     
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -21,8 +22,17 @@
                     echo json_encode($productResult);
                 }
                 exit;
-                }
             }
+            if($_POST['collectionType'] == "subscribers"){
+                $newsHandler = new Newsletter();
+                if($_POST['action'] == "get"){
+                    $newsResult = $newsHandler->getAllSubscribers();
+
+                    echo json_encode($newsResult);
+                }
+                exit;
+                }
+        }
         catch(PDOException $error) {
             echo json_encode($error->getMessage());
         }
