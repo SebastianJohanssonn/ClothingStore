@@ -86,14 +86,18 @@ function createProductDiv() {
 
 function createProductIgame(productInfo) {
     var chosenProductImage = document.createElement("img");
+    chosenProductImage.classList.add("shoppingcartImage");
     chosenProductImage.src = "data:image/jpeg;base64," + productInfo["image"];
     return chosenProductImage;
 }
 
 function createProductName(productInfo) {
+    var divOfProductsName = document.createElement("div");
+    divOfProductsName.id = "productsNameDiv";
     var nameOfChosenProduct = document.createElement("h3");
     nameOfChosenProduct.innerText = productInfo["name"];
-    return nameOfChosenProduct;
+    divOfProductsName.appendChild(nameOfChosenProduct);
+    return divOfProductsName;
 }
 
 function createProductPrice(productInfo) {
