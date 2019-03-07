@@ -47,6 +47,9 @@
                 </tr>
                 <!-- Rows will inserted here -->
             </table>
+            <input type="text" placeholder="Välj produkt Id" id="productId">
+            <input type="text" placeholder="Antal" id="units">
+            <button onclick=updateStock()>Uppdatera lagersaldo</button>
         </template>
     </div>
 <?php

@@ -2,6 +2,7 @@
     include "../classes/order.php";
     include "../classes/product.php";
     
+    
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         try{
             if($_POST['collectionType'] == "orders"){
@@ -20,8 +21,8 @@
                     echo json_encode($productResult);
                 }
                 exit;
+                }
             }
-        }
         catch(PDOException $error) {
             echo json_encode($error->getMessage());
         }

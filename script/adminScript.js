@@ -18,7 +18,7 @@ function viewOrders(){
     requestData.append("collectionType", "orders");
     requestData.append("action", "get");
     
-    makeRequest("./admin/requestHandler.php", "POST", requestData, function(response) {
+    makeRequest("./api/read.php", "POST", requestData, function(response) {
         console.log(response);
         var divContent = document.getElementById("content");
         var orderTemp = document.getElementById("orderTemp");
@@ -61,7 +61,7 @@ function viewProducts(){
     requestData.append("collectionType", "products");
     requestData.append("action", "get");
     
-    makeRequest("./admin/requestHandler.php", "POST", requestData, function(response) {
+    makeRequest("./api/read.php", "POST", requestData, function(response) {
         console.log(response);
         var divContent = document.getElementById("content");
         var productTemp = document.getElementById("productTemp");
@@ -99,6 +99,22 @@ function viewProducts(){
         }
         
     });
+}
+
+function updateStock(){
+    var requestData = new FormData();
+    var productId = document.getElementById("productId").value;
+    var amount = document.getElementById("units").value;
+
+    requestData.append("collectionType", "products");
+    requestData.append("action", "update");
+    requestData.append("prodId", productId);
+    requestData.append("amount", amount);
+    
+    makeRequest("./api/update.php", "POST", requestData, function(response) {
+        console.log(response);
+    });
+    location.reload();
 }
 function viewSubscribers(){
     $.ajax({
