@@ -5,6 +5,13 @@ body {
     size: 100%;
     min-height: 100%;
 }
+
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 #headerh1 {
    
     font-weight: 600;
