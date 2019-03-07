@@ -38,7 +38,6 @@
     <a href="index.php"><img id="logo" src="img/clothingstore_logo.svg" alt="clothingstore"></a>
 
     <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
-    <h1 id="headerh1">Clothing Store</h1>
     <nav class="mobileNav">
 
         <div class="dropdown">
