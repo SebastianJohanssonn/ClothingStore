@@ -13,9 +13,10 @@ header{
     width: 30%;
     padding: 0;
     margin: 3em 0 3em 0;
+}
 
 h3{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Verdana";
     font-size: 1em;
     font-weight: bold;
 }
