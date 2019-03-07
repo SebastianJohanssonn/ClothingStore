@@ -124,6 +124,7 @@ function addAllChosenProducts() {
     fetchHelper("cartBackend.php", "GET", (shoppingCart) => {
         var divOfNumberOfAllChosenProducts = document.createElement("div");
         var numberOfAllChosenProducts = document.createElement("p");
+        numberOfAllChosenProducts.id = "numberOfAllChosenProduct";
         var cartIcon = document.getElementById("cart");
         var number = 0;
 
