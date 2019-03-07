@@ -8,7 +8,6 @@ function ClothingStore($startYear) {
         return "&copy; $startYear";
     }
 }
-echo ClothingStore(2018);
 
 ?>
 
@@ -19,7 +18,6 @@ echo ClothingStore(2018);
         <li>01 23 456 789</li>
     </ul>
 </footer>
-</body>
 
 </html>
 

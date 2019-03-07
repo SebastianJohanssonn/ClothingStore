@@ -1,5 +1,18 @@
 <?php include ('includes/header.php') ?>
 <?php include ('includes/dbConnect.php') ?>
+<?php include('functions.php')?>
+
+<?php  if (isset($_SESSION['user'])) : ?>
+                    
+                    <strong><?php echo $_SESSION['user']['username']; ?></strong>
+                    
+                                        <small>
+                                            <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+                                            <br>
+                                            <a href="index.php?logout='1'" style="color: red;">logout</a>
+                                        </small>
+                    
+<?php endif ?>
 
 
 <?php
@@ -12,6 +25,7 @@ $db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image
 $product = $db->single();
 
 ?>
+<body>
 <div class ="container">
 
     <div class="row">
@@ -40,6 +54,6 @@ $product = $db->single();
 
 
 </div>
-
+</body>
 <?php include ('includes/footer.php') ?>
 

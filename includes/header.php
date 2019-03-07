@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="homePageDesktop.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="cart.js"></script>
     <script>
         $(document).ready(function(){
             $("#dropbtn1").click(function(){
@@ -31,11 +32,12 @@
         });
     </script>
 </head>
-<body>
+
 <header>
     <a id="cartLink "href="#"><i id="cart" class="fas fa-shopping-cart"></i></a>
     <h1 id="headerh1">Clothing Store</h1>
     <nav class="mobileNav">
+
         <div class="dropdown">
             <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
         </div>
@@ -43,7 +45,7 @@
             <a href="clothes.php">Clothes</a>
             <a href="accesories.php">Accesories</a>
             <a href="shoes.php">Shoes</a>
-            <a href="login.php">Log in</a>
+            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         </div>
     </nav>
