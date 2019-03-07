@@ -28,11 +28,14 @@
    <body>
    <header>
    <?php 
-	include('functions.php');
-	if (!isAdmin()) {
+    include('functions.php');
+    
+    
+    
+    if (!isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
-	}
+    }
 ?>
        <h1 id="headerh1">Clothing Store
        
