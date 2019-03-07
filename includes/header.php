@@ -35,7 +35,7 @@
 </head>
 
 <header>
-    <a id="cartLink "href="#"><i id="cart" class="fas fa-shopping-cart"></i></a>
+    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
     <h1 id="headerh1">Clothing Store</h1>
     <nav class="mobileNav">
 
