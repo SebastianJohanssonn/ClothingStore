@@ -1,26 +1,25 @@
-header{
-    text-align: center;
-}
+
 body {
     size: 100%;
     min-height: 100%;
 }
-#headerh1 {
-   
-    font-weight: 600;
-    font-size: 26px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 1em;
-    margin-top: 0.8em;
+
+header{
+    text-align: center;
 }
+
+#logo{
+    width: 30%;
+    padding: 0;
+    margin: 3em 0 3em 0;
+}
+
 #cart {
-    
     top: 0.5em;
     right: 1em;
     position: fixed; 
     text-decoration: none; 
     color: black;
-
 }
 
 .dropbtn {
