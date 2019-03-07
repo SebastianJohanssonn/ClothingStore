@@ -52,7 +52,7 @@ $products = $db->resultset();
 
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <button class="btn btn-light"><i class="fas fa-cart-plus"></i></button>
+                                    <button class="btn btn-light" onclick="addToShoppingcart(this)" id="<?php echo $clothes->productId ?>"><i class="fas fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>
