@@ -1,6 +1,10 @@
 <?php include ('includes/header.php') ?>
+<body onload="getAndDisplayShoppingcart()">
 <div class="mainBody">
     <h2>Shopping Cart</h2>
-    <button id="1" onclick="deleteFromShoppingcart(this)">Delete</button>
+    <div id="divOfChosenProducts">
+        
+    </div>
 </div>
+</body>
 <?php include ('includes/footer.php') ?>

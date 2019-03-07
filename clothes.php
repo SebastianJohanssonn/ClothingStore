@@ -8,6 +8,7 @@ $db = new Database;
 $db->query( "SELECT * FROM products RIGHT JOIN image ON products.imageID = image.imageID where categoryID  = 4");
 $products = $db->resultset();
 ?>
+<body>
 <?php  if (isset($_SESSION['user'])) : ?>
                     
                     <strong><?php echo $_SESSION['user']['username']; ?></strong>
@@ -51,7 +52,7 @@ $products = $db->resultset();
 
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <button class="btn btn-light"><i class="fas fa-cart-plus"></i></button>
+                                    <button class="btn btn-light" onclick="addToShoppingcart(this)" id="<?php echo $clothes->productId ?>"><i class="fas fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -61,4 +62,5 @@ $products = $db->resultset();
         </div>
     </div>
 </div>
+</body>
 <?php include ('includes/footer.php') ?>

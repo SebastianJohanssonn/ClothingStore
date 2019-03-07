@@ -3,7 +3,11 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
+    if (isset($_SESSION["shoppingCart"])) {
+        echo $_SESSION["shoppingCart"];
+    } else {
+        echo "{}";
+    }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     parse_str(file_get_contents("php://input"), $_PUT);
     $productId = $_PUT["productId"];

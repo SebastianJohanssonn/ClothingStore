@@ -18,7 +18,6 @@ function ClothingStore($startYear) {
         <li>01 23 456 789</li>
     </ul>
 </footer>
-</body>
 
 </html>
 
