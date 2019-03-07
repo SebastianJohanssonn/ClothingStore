@@ -86,6 +86,7 @@ function createProductDiv() {
 
 function createProductIgame(productInfo) {
     var chosenProductImage = document.createElement("img");
+    chosenProductImage.classList.add("shoppingcartImage");
     chosenProductImage.src = "data:image/jpeg;base64," + productInfo["image"];
     return chosenProductImage;
 }
