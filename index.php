@@ -29,8 +29,23 @@
 
 				<?php endif ?>
                 </div>
-			</h1>
-                
+			</h1>         
+	
+    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
+    <nav>
+        <div class="dropdown">
+            <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
+
+        </div>
+        <div id="dropdown-content1" class="dropdown-content">
+            <a href="clothes.php">Clothes</a>
+            <a href="accesories.php">Accesories</a>
+            <a href="shoes.php">Shoes</a>
+            <a href="register.php">Register</a>
+            <a href="newsletter.html">Subscribe for newsletter</a>
+        </div>
+    </nav>
+
 </header>
 <div class="mainBody">
       <img id="headerImage" src="clothingStoreImg.jpg" alt="imageHomePage">
