@@ -19,7 +19,7 @@ function ClothingStore($startYear) {
         <div id="newsletterform">
             <div class="wrap">
                 <h3>Get newsletter</h3>
-                <form action="send.php" method="post" id="newsletter" name="newsletter">
+                <form action="api/send.php" method="post" id="newsletter" name="newsletter">
                     <input type="name" name="signup-name" id="signup-name" value="" placeholder="Insert name here" />
                     <input type="email" name="signup-email" id="signup-email" value="" placeholder="Insert email here" />
                     <input type="submit" value="Subscribe" name="signup-button" id="signup-button">
@@ -28,7 +28,7 @@ function ClothingStore($startYear) {
                 <div id="response"></div>
             </div>
             <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="assets/js/lib.js"></script>
+        <script src="script/newsletter.js"></script>
         </div>
     </ul>
 </footer>
