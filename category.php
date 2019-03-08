@@ -1,5 +1,4 @@
 <?php include ('includes/header.php') ?>
-<?php include('functions.php') ?>
 
 <?php  if (isset($_SESSION['user'])) : ?>
 
