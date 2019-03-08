@@ -9,7 +9,7 @@
         }
 
         public function getAllSubscribers(){
-            $query = $this->database->connection->prepare("SELECT * FROM newsletter;");
+            $query = $this->database->getConnection()->prepare("SELECT * FROM newsletter;");
             $query->execute();
             $result = $query->fetchAll();
 
