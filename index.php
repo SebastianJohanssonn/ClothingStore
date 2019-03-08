@@ -75,9 +75,10 @@
 
         </div>
         <div id="dropdown-content1" class="dropdown-content">
-            <a href="clothes.php">Clothes</a>
-            <a href="accesories.php">Accesories</a>
-            <a href="shoes.php">Shoes</a>
+            <a href="category.php?id=4">Clothes</a>
+            <a href="category.php?id=3">Accesories</a>
+            <a href="category.php?id=2">Shoes</a>
+            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         </div>
     </nav>
