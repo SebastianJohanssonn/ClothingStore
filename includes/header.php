@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="homePage.css">
     <link rel="stylesheet" type="text/css" href="css/shoppingcart.css">
     <link rel="stylesheet" type="text/css" href="homePageDesktop.css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="cart.js"></script>
