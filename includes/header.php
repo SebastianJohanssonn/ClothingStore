@@ -30,7 +30,7 @@
 </head>
 
 <header>
-    <h1 id="headerh1">Clothing Store</h1>
+    <img id="logo" src="img/clothingstore_logo.svg" alt="clothingstore">
     <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
     <nav>
         <div class="dropdown">

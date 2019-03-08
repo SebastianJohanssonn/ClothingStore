@@ -1,7 +1,6 @@
-<?php include ('includes/header.php') ?>
-<body>
+
 <?php 
-	include('functions.php');
+	include('api/registerFunctions.php');
 
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
@@ -35,60 +34,34 @@
     </script>
 </head>
 <body>
-<header>
-    <h1 id="headerh1">Clothing Store
-    
+<?php include ('includes/header.php') ?>    
 		<!-- notification message -->
 	<div class="inline">	<?php if (isset($_SESSION['success'])) : ?>
 			
+        <?php 
+            //echo $_SESSION['success']; 
+            unset($_SESSION['success']);
+        ?>
 				
-					<?php 
-						//echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				
-			
 		<?php endif ?>
 		<!-- logged in user information -->
 		
-			
-
-			
 				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['username']; ?></strong>
+					<?php echo $_SESSION['user']['username']; ?>
 
-					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+						(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)
 						<br>
-						<a href="index.php?logout='1'" style="color: red;">logout</a>
-					</small>
-
-				<?php endif ?>
-                </div>
-			</h1>
-                
+						<a href="index.php?logout='1'">logout</a>
+				<?php endif ?>                
 	
     <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
-    <nav>
-        <div class="dropdown">
-            <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
-
-        </div>
-        <div id="dropdown-content1" class="dropdown-content">
-            <a href="category.php?id=4">Clothes</a>
-            <a href="category.php?id=3">Accesories</a>
-            <a href="category.php?id=2">Shoes</a>
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
-        </div>
-    </nav>
-</header>
+   
 <div class="mainBody">
-    <img src="clothingStoreImg.jpg" alt="imageHomePage">
+    <img src="img/clothingStoreImg.jpg" alt="imageHomePage">
     <h2>Our Values</h2>
     <p id= "valuesText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium provident labore, repellendus voluptate alias quod, obcaecati vitae nihil distinctio ipsum accusamus! Nisi harum rem reprehenderit ipsam numquam voluptatum nostrum dicta?</p>
 </div>
+<?php include ('includes/footer.php')?>
 </body>
-<?php include ('includes/footer.php') ?>
 </html>
 
