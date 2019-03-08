@@ -8,7 +8,7 @@
         }
 
         public function getAllProducts(){
-            $query = $this->database->connection->prepare("SELECT * FROM products;");
+            $query = $this->database->getConnection()->prepare("SELECT * FROM products;");
             $query->execute();
             $result = $query->fetchAll();
 
@@ -16,7 +16,7 @@
         }
 
         public function updateStock($id, $amount){
-            $query = $this->database->connection->prepare("UPDATE products 
+            $query = $this->database->getConnection()->prepare("UPDATE products 
             SET unitsInStock ='" .$amount. "'WHERE productId = '".$id."';");
             
             $result = $query->execute();

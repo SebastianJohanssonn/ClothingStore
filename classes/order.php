@@ -11,7 +11,7 @@
 
         public function getAllOrders(){
 
-            $query = $this->database->connection->prepare("SELECT * FROM orders;");
+            $query = $this->database->getConnection()->prepare("SELECT * FROM orders;");
             $query->execute();
             $result = $query->fetchAll();
 
