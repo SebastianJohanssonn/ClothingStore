@@ -36,7 +36,6 @@ function showCategory(id, name) {
         </div>
     </div>    
         `;
-        console.log(data)
         // loop through returned list of data
         $.each(data.records, function (key, val) {
             // creating new table row per record

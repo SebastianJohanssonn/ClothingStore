@@ -27,9 +27,6 @@ $id = $_GET['id'];
     </div>
 </div>
 </body>
-<script>
-
-</script>
 <script src="js/get-category.js"></script>
 <script src="js/get-single-product.js"></script>
 
