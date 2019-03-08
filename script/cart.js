@@ -26,7 +26,7 @@ function addToShoppingcart(addProductButton) {
     var productId = addProductButton.id;
     var queryString = "productId="+productId;
 
-    fetchHelper("cartBackend.php", "PUT", (json) => {console.log(json)}, queryString);
+    fetchHelper("api/cartBackend.php", "PUT", (json) => {console.log(json)}, queryString);
 }
 
 function deleteFromShoppingcart(deleteProductButton) {
@@ -34,7 +34,7 @@ function deleteFromShoppingcart(deleteProductButton) {
     var productId = deleteProductButton.id;
     var queryString = "productId="+productId;
 
-    fetchHelper("cartBackend.php", "DELETE", (shoppingCart) => {
+    fetchHelper("api/cartBackend.php", "DELETE", (shoppingCart) => {
         updateNumberOfChosenProducts(shoppingCart);
         removeProductDivIfDoesntExist(productId, shoppingCart);
     }, queryString);
@@ -48,7 +48,7 @@ function removeProductDivIfDoesntExist(productId, shoppingCart) {
 }
 
 function getAndDisplayShoppingcart() {
-    fetchHelper("cartBackend.php", "GET", (shoppingCart) => {
+    fetchHelper("api/cartBackend.php", "GET", (shoppingCart) => {
         displayShoppingCart(shoppingCart);
         addAllChosenProducts(shoppingCart);
     });

@@ -48,8 +48,8 @@
 
 </header>
 <div class="mainBody">
-      <img id="headerImage" src="clothingStoreImg.jpg" alt="imageHomePage">
-        <img id="fullSizeImg" src="clothingStoreImg.jpg" alt="imageHomePage">
+      <img id="headerImage" src="img/clothingStoreImg.jpg" alt="imageHomePage">
+        <img id="fullSizeImg" src="img/clothingStoreImg.jpg" alt="imageHomePage">
         <img id="croppedImg" src="croppedImg.png" alt="imageHomePage">
 
     <h2>Our Values</h2>
