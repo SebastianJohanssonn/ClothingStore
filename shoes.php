@@ -40,7 +40,7 @@ $products = $db->resultset();
             <?php foreach ($products as $shoe) {?>
                 <div class="col-md-3 product">
                     <a href="product.php?id=<?php echo $shoe->productId ?>">
-                    <?php echo '<img class="product-image" src="data:image/jpeg;base64,'.base64_encode( $shoe->image ).'"/>'; ?>
+                    <?php echo '<img class="product-image" src="productImages/'.$shoe->imageSrc.'"/>'; ?>
                     </a>
                     <div class="product-text">
                         <?php echo $shoe->name?>
