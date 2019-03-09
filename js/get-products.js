@@ -23,7 +23,7 @@ function showProducts() {
                                     `+ val.price + `
                                             </div>
                                 <div class="col-md-6 text-right">
-                                    <button class="btn btn-light" onclick ="addToShoppingcart(this)" data-id="` + val.productId + `"><i class="fas fa-cart-plus"></i></button>
+                                    <button class="btn btn-light" onclick="addToShoppingcart(this)" data-id="` + val.productId + `"><i class="fas fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>

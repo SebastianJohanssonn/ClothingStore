@@ -104,7 +104,7 @@ function createProductDiv() {
 function createProductImage(productInfo) {
     var chosenProductImage = document.createElement("img");
     chosenProductImage.classList.add("shoppingcartImage");
-    chosenProductImage.src = "data:image/jpeg;base64," + productInfo["image"];
+    chosenProductImage.src = "productImages/" + productInfo["imageSrc"];
     return chosenProductImage;
 }
 
