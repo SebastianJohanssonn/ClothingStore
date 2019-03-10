@@ -28,7 +28,7 @@ $(document).ready(function () {
                    <h4>
                    `+ data.price + ` kr
                    </h4>
-                    <button class="btn btn-Dark"> Buy</button>
+                    <button class="btn btn-Dark" id="`+ data.productId + `" onclick="addToShoppingcart(this)"> Buy</button>
                 </div>
         
             </div>
@@ -44,9 +44,7 @@ $(document).ready(function () {
 
             // inject html to 'page-content' of our app
             $("#page-content").html(read_one_product_html);
-
-            // chage page title
-            changePageTitle("Create Product");
+;
         });
 
 

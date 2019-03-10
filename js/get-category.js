@@ -52,7 +52,7 @@ function showCategory(id, name) {
                                     `+ val.price + `
                                             </div>
                                 <div class="col-md-6 text-right">
-                                    <button class="btn btn-light"><i class="fas fa-cart-plus"></i></button>
+                                <button class="btn btn-Dark" id="`+ val.productId + `" onclick="addToShoppingcart(this)"> Buy</button>
                                 </div>
                             </div>
                         </div>

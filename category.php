@@ -1,5 +1,5 @@
 <?php include ('includes/header.php') ?>
-
+<body onload="getAndDisplayShoppingcart()">
 <?php  if (isset($_SESSION['user'])) : ?>
 
     <strong><?php echo $_SESSION['user']['username']; ?></strong>
@@ -20,7 +20,7 @@ $id = $_GET['id'];
 <div class="mainBody">
     
 
-    <div class="container products">
+    <div class="container-products">
         <div id="page-content" class="row">
         </div>
     </div>
