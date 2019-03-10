@@ -11,7 +11,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/pc.css">
     <link rel="stylesheet" type="text/css" href="css/shoppingcart.css">
-    
     <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <script src="./script/newsletter.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -30,8 +29,8 @@
 </head>
 
 <header>
-    <h1 id="headerh1">Clothing Store</h1>
-    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
+    <img id="logo" src="img/clothingstore_logo.svg" alt="clothingstore">
+    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"><div><p id="numberOfAllChosenProduct"></p></div></i></a>
     <nav>
         <div class="dropdown">
             <i id="dropbtn1" class="dropbtn fas fa-bars"></i>
