@@ -21,13 +21,13 @@ $id = $_GET['id'];
     
 
     <div class="container-products">
-        <div id="page-content" class="row">
+        <div id="page-content">
         </div>
     </div>
 </div>
 </body>
-<script src="js/get-category.js"></script>
-<script src="js/get-single-product.js"></script>
+<script src="script/get-category.js"></script>
+<script src="script/get-single-product.js"></script>
 
 
 <?php include ('includes/footer.php') ?>
