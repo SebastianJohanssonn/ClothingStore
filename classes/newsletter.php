@@ -15,5 +15,19 @@
 
             return $result;
         }
+
+        public function createSubscriber($email, $name){
+            $query = $this->database->getConnection()->prepare("INSERT INTO newsletter
+            (email, name)
+            VALUES ('.$email.', '.$name.');");
+            $result = $query->execute();
+            if(!empty($result)){
+                return "Du är nu registrerad!";
+            }else {
+                return "Testa igen!";
+            }
+            
+            
+        }
     }
 ?>
