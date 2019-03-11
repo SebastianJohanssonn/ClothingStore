@@ -1,4 +1,21 @@
-.products{
+#products-div{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#single-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+}
+
+#single-product button{
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin: auto;
+    cursor: pointer;
 }
