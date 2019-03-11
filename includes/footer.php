@@ -17,7 +17,7 @@ function ClothingStore($startYear) {
         <li>01 23 456 789</li>
         <div id="newsletterMainDiv">
             <div class="newsletterDiv">
-                <h3>Get newsletter</h3>
+                <p>Get newsletter</p>
                 
                 <input type="name" name="signup-name" id="signup-name" value="" placeholder="Insert name here" />
                 <input type="email" name="signup-email" id="signup-email" value="" placeholder="Insert email here" />
@@ -26,7 +26,7 @@ function ClothingStore($startYear) {
                 
                 <div id="response"></div>
             </div>
-            
+
             <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             
         </div>
