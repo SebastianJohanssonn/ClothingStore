@@ -46,15 +46,13 @@
 		<?php endif ?>
 		<!-- logged in user information -->
 		
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<?php echo $_SESSION['user']['username']; ?>
+            <?php  if (isset($_SESSION['user'])) : ?>
+                <?php echo $_SESSION['user']['username']; ?>
 
-						(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)
-						<br>
-						<a href="index.php?logout='1'">logout</a>
-				<?php endif ?>                
-	
-    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart"></i></a>
+                    (<?php echo ucfirst($_SESSION['user']['user_type']); ?>)
+                    <br>
+                    <a href="index.php?logout='1'">logout</a>
+            <?php endif ?>                
    
 <div class="mainBody">
     <img src="img/clothingStoreImg.jpg" alt="imageHomePage">
