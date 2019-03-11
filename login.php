@@ -10,10 +10,9 @@
 <?php echo display_error(); ?>
 
     <div id="input">
-        <div class="input-group">
+        <div class="input-group" id="username-input">
             <label>Username</label>
             <input type="text" name="username" >
-            
         </div>
         <div class="input-group">
             <label>Password</label>

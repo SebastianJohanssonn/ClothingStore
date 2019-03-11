@@ -8,20 +8,31 @@ form{
     display: block;
     padding: 0.5em;
     border: 1px solid #000;
-    width: 80%;
+    width: 60%;
+    padding: 2em;
 }
 
 .input-group{
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+#username-input{
+    margin-bottom: 2em;
+}
+
+.reg-input-group{
     margin: 1em auto 1.5em auto;
     display: block;
     width: 40%;
 }
 
-.input-group label{
+.reg-input-group label{
     float: left;
 }
 
-.input-group input{
+.reg-input-group input{
     float: right;
 }
 
