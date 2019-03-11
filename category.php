@@ -20,7 +20,7 @@ $id = $_GET['id'];
 <div class="mainBody">
     
 
-    <div class="container-products">
+    <div class="container container-products">
         <div id="page-content">
         </div>
     </div>

@@ -17,7 +17,7 @@ $(document).ready(function () {
                 <div class="col-md-8">
                     <img class="product-image-info" src="productImages/`+ data.image + `"/>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 product-info">
                     <br>
                     <h2 class="product-info-name">  `+ data.name + ` </h2>
                     <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin.
