@@ -1,5 +1,6 @@
 form{
     font-family: 'Verdana';
+    margin: auto;
 }
 
 #input{
@@ -13,10 +14,25 @@ form{
 .input-group{
     margin: 1em auto 1.5em auto;
     display: block;
+    width: 40%;
+}
+
+.input-group label{
+    float: left;
+}
+
+.input-group input{
+    float: right;
 }
 
 input{
     width: 60%;
+}
+
+#registerForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
 }
 
 @media screen and (max-width: 992px) {
@@ -26,5 +42,10 @@ input{
     input{
         width: 100%;
     }
-
+    .input-group{
+        width: 90%;
+    }
+    form{
+        width: 90%;
+    }
 }

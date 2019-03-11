@@ -2,7 +2,7 @@
 <?php include ('includes/header.php') ?>
 <div class="mainBody">
 		<h2>Register</h2>
-	<form method="post" action="register.php">
+	<form id="registerForm" method="post" action="register.php">
 
 		<?php echo display_error(); ?>
 
