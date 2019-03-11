@@ -1,0 +1,75 @@
+footer {
+    background-color: black;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    bottom: 0;  
+    color: white;
+    font-family: 'Verdana';
+    font-size: 10px;
+}
+
+footer ul{
+    display: flex;
+    flex-wrap: row;
+    justify-content: space-evenly;
+    list-style-type: none; 
+    padding: 0;    
+} 
+
+footer li{
+    text-decoration: none;
+}
+
+#newsletterMainDiv{
+    width: 30%;
+}
+
+.newsletterDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+#signup-button{
+    text-decoration: none;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 4px;
+    font-family: 'Verdana';
+    font-weight: bold;
+    width: 25%;
+}
+
+#signup-name, #signup-email{
+    width: 100%;
+}
+
+#signup-name{
+    margin: 1em 0 1em 0;
+}
+
+#signup-email{
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 992px) {
+    footer ul{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #newsletterMainDiv{
+        width: 100%;
+    }
+
+    #signup-name, #signup-email{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    footer button{
+        width: 30%;
+        margin: auto;
+    }
+}
