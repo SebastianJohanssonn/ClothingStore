@@ -22,11 +22,9 @@ function fetchHelper(url, method, callback, queryString = "") {
 }
 
 function addToShoppingcart(addProductButton) {
-    console.log('it works!');
     var productId = addProductButton.id;
     var queryString = "productId="+productId;
-
-    fetchHelper("api/cartBackend.php", "PUT", (json) => {console.log(json)}, queryString);
+    fetchHelper("api/cartBackend.php", "PUT", (json) => {updateNumberNextToCartIcon()}, queryString);
 }
 
 function deleteFromShoppingcart(deleteProductButton) {
