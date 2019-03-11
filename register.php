@@ -32,4 +32,3 @@
 </div>
 </body>
 <?php include ('includes/footer.php') ?>
->>>>>>> 1be3cb399eb83febcf78e7b414feaf02d835bf74
