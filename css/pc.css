@@ -80,6 +80,15 @@ button{
     text-decoration: underline;
 }
 
+.section{
+    min-height: 600px;
+}
+
+.section p{
+    margin: 4em;
+    line-height: 2;
+}
+
 #cart {    
     top: 0.5em;
     right: 1em;
