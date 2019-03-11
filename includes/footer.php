@@ -12,12 +12,11 @@ function ClothingStore($startYear) {
 ?>
 <footer>
     <ul>
-        <li>info@cs.com</li>
-        <li id=footerYear> <?php echo ClothingStore(2018); ?></li>
-        <li>01 23 456 789</li>
+        <li><b>E-mail: </b>info@cs.com</li>
+        <li><b>Telephone: </b>01 23 456 789</li>
         <div id="newsletterMainDiv">
             <div class="newsletterDiv">
-                <h3>Get newsletter</h3>
+                <p>Get newsletter</p>
                 
                 <input type="name" name="signup-name" id="signup-name" value="" placeholder="Insert name here" />
                 <input type="email" name="signup-email" id="signup-email" value="" placeholder="Insert email here" />
@@ -31,6 +30,8 @@ function ClothingStore($startYear) {
             
         </div>
     </ul>
+    <span id=footerYear> <?php echo ClothingStore(2018); ?></span>
+
 </footer>
 
 </html>

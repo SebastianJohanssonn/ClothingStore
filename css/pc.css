@@ -8,12 +8,16 @@ body {
 
 .mainBody {
     text-align: center;
-    margin: 3em;
+    margin: 3em auto 3em auto;
     padding-bottom: 70px;
 }
 
 header{
     text-align: center;
+}
+
+#headerImage{
+    width: 100%;
 }
 
 #logo{
@@ -44,6 +48,11 @@ h2{
 h3{
     font-size: 1em;
     font-weight: bold;
+}
+
+button{
+    font-family: 'Verdana';
+    font-weight: bold !important;
 }
 
 #cart {    
