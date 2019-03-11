@@ -21,7 +21,7 @@ function ClothingStore($startYear) {
                 
                     <input type="name" name="signup-name" id="signup-name" value="" placeholder="Insert name here" />
                     <input type="email" name="signup-email" id="signup-email" value="" placeholder="Insert email here" />
-                    <button id="signup-button" onclick=makeSubscriber()>Prenumerera</button>
+                    <button id="signup-button" onclick=makeSubscriber()>Subscribe</button>
                     <span class="arrow"></span>
                 
                 <div id="response"></div>
