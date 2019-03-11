@@ -17,7 +17,7 @@ function ClothingStore($startYear) {
         <li>01 23 456 789</li>
         <div id="newsletterMainDiv">
             <div class="newsletterDiv">
-                <h3>Get newsletter</h3>
+                <p>Get newsletter</p>
                 
                 <input type="name" name="signup-name" id="signup-name" value="" placeholder="Insert name here" />
                 <input type="email" name="signup-email" id="signup-email" value="" placeholder="Insert email here" />

@@ -20,6 +20,10 @@ footer li{
     text-decoration: none;
 }
 
+footer p{
+    font-size: 2em;
+}
+
 #newsletterMainDiv{
     width: 30%;
 }
@@ -56,6 +60,10 @@ footer li{
     footer ul{
         flex-direction: column;
         text-align: center;
+    }
+
+    footer p{
+        margin-top: 1em;
     }
 
     #newsletterMainDiv{
