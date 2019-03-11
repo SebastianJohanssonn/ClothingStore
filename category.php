@@ -1,33 +1,30 @@
-<?php include ('includes/header.php') ?>
-<body onload="getAndDisplayShoppingcart()">
-<?php  if (isset($_SESSION['user'])) : ?>
+<?php 
+	include('api/registerFunctions.php');
 
-    <strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-    <small>
-        <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-        <br>
-        <a href="index.php?logout='1'" style="color: red;">logout</a>
-    </small>
-
-<?php endif ?>
-
-<?php
-$id = $_GET['id'];
+	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
 ?>
-<input  id="category" type="hidden" value="<?php echo $id ?>">
 
-<div class="mainBody">
-    
+<body onload="getAndDisplayShoppingcart()">
 
-    <div class="container-products">
-        <div id="page-content">
+<?php include ('includes/header.php') ?>
+<?php  if (isset($_SESSION['user'])) : ?>
+<?php endif ?>
+<?php $id = $_GET['id']; ?>
+
+    <input  id="category" type="hidden" value="<?php echo $id ?>">
+    <div class="mainBody">
+        <div class="container-products">
+            <div id="page-content">
+            </div>
         </div>
     </div>
-</div>
-</body>
+
 <script src="script/get-category.js"></script>
 <script src="script/get-single-product.js"></script>
 
+</body>
 
 <?php include ('includes/footer.php') ?>
