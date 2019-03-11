@@ -1,5 +1,5 @@
 <?php include ('includes/header.php') ?>
-<body onload="getAndDisplayShoppingcart()">
+<body onload="updateNumberNextToCartIcon()">
 <?php  if (isset($_SESSION['user'])) : ?>
 
     <strong><?php echo $_SESSION['user']['username']; ?></strong>
