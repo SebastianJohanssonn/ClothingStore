@@ -148,14 +148,19 @@ button{
 
 .product-image{
     height: 150px;
+    width: 100%;
     object-position: center;
     padding-bottom: 0;
 }
 
 .product-image-info {
-    height: auto;
+    width: 100%;
     object-position: left;
     padding-bottom: 0;
+}
+
+.product-info>h4{
+    display: inline;
 }
 
 .product-info-name {
