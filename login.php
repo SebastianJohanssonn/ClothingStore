@@ -5,11 +5,11 @@
 
 <h1>Log in form</h1>
 
-<form method="post" action="login.php">
+    <form method="post" action="login.php">
 
-<?php echo display_error(); ?>
+        <?php echo display_error(); ?>
 
-    <div id="input">
+
         <div class="input-group" id="username-input">
             <label>Username</label>
             <input type="text" name="username" >
@@ -18,11 +18,11 @@
             <label>Password</label>
             <input type="password" name="password">
         </div>
-    </div>
-
-    <button type="submit" class="btn" name="login_btn">Login</button> 
-
-</form>
+        <div class="input-group">
+            <button type="submit" class="btn" name="login_btn">Login</button> 
+        </div>
+    </form>
+    
 </div>
 
 </body>
