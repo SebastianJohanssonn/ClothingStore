@@ -1,14 +1,13 @@
 form{
     font-family: 'Verdana';
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
 }
 
-#input{
-    margin: 2em auto 2em auto;
-    display: block;
-    padding: 0.5em;
-    border: 1px solid #000;
-    width: 80%;
+#username-input{
+    margin-bottom: 2em;
 }
 
 .input-group{
@@ -29,16 +28,7 @@ input{
     width: 60%;
 }
 
-#registerForm{
-    display: flex;
-    flex-direction: column;
-    margin-top: 2em;
-}
-
 @media screen and (max-width: 992px) {
-    #input{
-        width: 100%;
-    }
     input{
         width: 100%;
     }
