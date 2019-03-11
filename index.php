@@ -6,7 +6,7 @@
 		header('location: login.php');
 	}
 ?>
-<body>
+<body onload="updateNumberNextToCartIcon()">
 <?php include ('includes/header.php') ?>         
 
 <div class="mainBody">

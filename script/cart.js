@@ -54,6 +54,12 @@ function getAndDisplayShoppingcart() {
     });
 }
 
+function updateNumberNextToCartIcon() {
+    fetchHelper("api/cartBackend.php", "GET", (shoppingCart) => {
+        addAllChosenProducts(shoppingCart);
+    });
+}
+
 function displayShoppingCart(shoppingCart) {
     sortedProductIdList = getSortedProductIdList(shoppingCart);
     displayProductList(sortedProductIdList, shoppingCart);  
