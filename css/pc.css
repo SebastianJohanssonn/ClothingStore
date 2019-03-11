@@ -8,12 +8,16 @@ body {
 
 .mainBody {
     text-align: center;
-    margin: 3em;
+    margin: 3em auto 3em auto;
     padding-bottom: 70px;
 }
 
 header{
     text-align: center;
+}
+
+#headerImage{
+    width: 100%;
 }
 
 #logo{
