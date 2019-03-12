@@ -70,8 +70,10 @@
             <a href="category.php?id=4">Clothes</a>
             <a href="category.php?id=3">Accesories</a>
             <a href="category.php?id=2">Shoes</a>
+            <?php if (!isset($_SESSION['user'])) : ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <?php endif ?>
         </div>
     </nav>
 </header>

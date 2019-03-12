@@ -8,8 +8,6 @@
         <form method="post" action="login.php">
 
             <?php echo display_error(); ?>
-
-
             <div class="input-group" id="username-input">
                 <label>Username</label>
                 <input type="text" name="username" >

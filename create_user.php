@@ -1,18 +1,12 @@
-<?php include ('api/registerFunctions.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Registration system PHP and MySQL - Create user</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
-	<style>
-		.header {
-			background: #003366;
-		}
-		button[name=register_btn] {
-			background: #003366;
-		}
-	</style>
-</head>
+<?php 
+    include ('api/registerFunctions.php');
+    include ('includes/header.php') ;
+    
+    if (!isAdmin()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+    }
+?>
 <body>
 	<div class="header">
 		<h2>Admin - create user</h2>
@@ -51,4 +45,4 @@
 		</div>
 	</form>
 </body>
-</html>
+<?php include ('includes/footer.php') ?>
