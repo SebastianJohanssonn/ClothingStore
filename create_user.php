@@ -1,4 +1,4 @@
-<?php include('../functions.php') ?>
+<?php include ('api/registerFunctions.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
