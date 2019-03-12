@@ -17,6 +17,11 @@
         }
 
         public function createSubscriber($email, $name){
+            
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return "Ingen giltig emailadress.";
+            }
+
             $query = $this->database->getConnection()->prepare("INSERT INTO newsletter
             (email, name)
             VALUES ('.$email.', '.$name.');");
@@ -26,7 +31,6 @@
             }else {
                 return "Testa igen!";
             }
-            
             
         }
     }
