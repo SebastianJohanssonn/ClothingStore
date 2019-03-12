@@ -17,6 +17,10 @@
         }
 
         public function createSubscriber($email, $name){
+
+            if(empty($name) || empty($email)){
+                return "Name or email is not filled in.";
+            }
             
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 return "Ingen giltig emailadress.";
