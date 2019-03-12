@@ -87,6 +87,15 @@
 		return $user;
 	}
 
+	// returns the id of the logged in user
+	function getUserId() {
+		if (isset($_SESSION['user'])) {
+			return $_SESSION['user'];
+		}else{
+			return false;
+		}
+	}
+
 	// LOGIN USER
 	function login(){
 		global $db, $username, $errors;

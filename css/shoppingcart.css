@@ -36,3 +36,13 @@
 #numberOfAllChosenProduct{
     margin: 0 0 0 8px;
 }
+
+#shippingOptions input {
+    width: 0;
+}
+
+#orderAdress {
+    width: 20rem;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
