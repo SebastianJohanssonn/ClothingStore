@@ -1,11 +1,3 @@
-<?php 
-	include('api/registerFunctions.php');
-
-	if (!isLoggedIn()) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: login.php');
-	}
-?>
 <body onload="updateNumberNextToCartIcon()">
 <?php include ('includes/header.php') ?>         
 
