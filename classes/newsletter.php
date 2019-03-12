@@ -22,15 +22,21 @@
                 return "Ingen giltig emailadress.";
             }
 
-            $query = $this->database->getConnection()->prepare("INSERT INTO newsletter
+            $query = $this->database->getConnection()->prepare("SELECT email FROM newsletter
+            WHERE email = '.$email.';");
+            $query->execute();
+            if($query->rowCount() > 0){
+                return "This email already exists.";
+            }
+
+            $query2 = $this->database->getConnection()->prepare("INSERT INTO newsletter
             (email, name)
             VALUES ('.$email.', '.$name.');");
-            $result = $query->execute();
+            $result = $query2->execute();
             if(!empty($result)){
-                return "Du är nu registrerad!";
-            }else {
-                return "Testa igen!";
+                return "You are now registered!";
             }
+
             
         }
     }
