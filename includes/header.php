@@ -35,32 +35,28 @@
 }
 ?>
 <header>
-    <div id="headerInfo">
 
-        <div id="userInfo">
-            <!-- notification message -->
-            <?php if (isset($_SESSION['success'])) : ?>
-            <?php 
-                unset($_SESSION['success']);
-            ?>
-            <?php endif ?>
-            <!-- logged in user information -->
-            <?php  if (isset($_SESSION['user'])) : ?>
+<div class="container header-container">
+  <div class="row">
+    <div class="col-sm">
+      <!-- logged in user information -->
+      <?php  if (isset($_SESSION['user'])) : ?>
             <?php echo $_SESSION['user']['username']; ?>
             (<?php echo ucfirst($_SESSION['user']['user_type']); ?>)
             <div id="loggedIn">
                 <a href="index.php?logout='1'">Logout</a>
             </div>
             <?php endif ?>
-        </div>
-
-        <div id="shoppingCart">
-            <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart fa-2x"><div><p id="numberOfAllChosenProduct"></p></div></i></a>
-        </div>
-
     </div>
-
-    <a href="index.php"><img id="logo" src="img/clothingstore_logo.svg" alt="clothingstore"></a>
+    <div class="col-sm-6">
+    <a href="index.php"><img id="" src="img/clothingstore_logo.svg" alt="clothingstore"></a>
+    </div>
+    <div class="col-sm">
+    <a id="cartLink "href="cart.php"><i id="cart" class="fas fa-shopping-cart fa-2x"><div><p id="numberOfAllChosenProduct"></p></div></i></a>
+    <br>
+    </div>
+  </div>
+</div>
 
     <nav>
         <div class="dropdown">
