@@ -1,30 +1,37 @@
-function makeRequest(url, method, formdata, callback){
-    fetch(url, {
-        method: method,
-        body: formdata
-    }).then((data) => {
-        return data.json();
-    })
-    .then((result) => {
-        callback(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-}
+$(document).ready(function () {
+    $('#newsletter').submit(function (event) {
+        var $this     = $(this),
+            $response = $('#response'),
+            $mail     = $('#signup-email'),
+            testmail  = /^[^0-9][A-z0-9._%+-]+([.][A-z0-9_]+)*[@][A-z0-9_]+([.][A-z0-9_]+)*[.][A-z]{2,4}$/,
+            hasError  = false;
+        $response.find('p').remove();
 
-function makeSubscriber(){
-    var requestData = new FormData();
-    var signUpName = document.getElementById("signup-name").value;
-    var signUpEmail = document.getElementById("signup-email").value;
-    var result = document.getElementById("response");
+        if (!testmail.test($mail.val())) {
+            $response.html('<p class="error">Please enter a valid email</p>');
+            hasError = true;
+        }
 
-    requestData.append("collectionType", "subscribers");
-    requestData.append("action", "create");
-    requestData.append("signUpEmail", signUpEmail);
-    requestData.append("signUpName", signUpName);
+        if (hasError === false) {
 
-    makeRequest("./api/create.php", "POST", requestData, function(response) {
-        result.append(response);
+            $response.find('p').remove();
+            $response.addClass('loading');
+
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                cache: false,
+                url: $this.attr('action'),
+                data: $this.serialize()
+            }).done(function (data) {
+                $response.removeClass('loading');
+                $response.html('<p>'+data.message+'</p>');
+            }).fail(function() {
+                $response.removeClass('loading');
+                $response.html('<p>An error occurred, please try again</p>');
+            })
+        }
+
+        return false;
     });
-}
+});
