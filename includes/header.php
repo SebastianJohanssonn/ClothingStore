@@ -44,7 +44,7 @@
             <?php echo $_SESSION['user']['username']; ?>
             (<?php echo ucfirst($_SESSION['user']['user_type']); ?>)
             <div id="loggedIn">
-                <a href="index.php?logout='1'">Logout</a>
+                <a href="user.php?logout='1'">Logout</a>
             </div>
             <?php endif ?>
     </div>
