@@ -1,4 +1,12 @@
-<?php include ('api/registerFunctions.php'); ?>
+<?php 
+    include ('api/registerFunctions.php');
+    include ('includes/header.php') ;
+    
+    if (!isAdmin()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
