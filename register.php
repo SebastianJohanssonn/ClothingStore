@@ -9,11 +9,11 @@
 
 			<div class="input-group">
 				<label class="lable">Username</label>
-				<input type="text" name="username" class="label1"  value="<?php echo $username; ?>">
+				<input type="text" name="username" class="label1">
 			</div>
 			<div class="input-group">
 				<label>Email</label>
-				<input type="email" name="email" class="label2" value="<?php echo $email; ?>">
+				<input type="email" name="email" class="label2">
 			</div>
 			<div class="input-group">
 				<label>Password</label>
