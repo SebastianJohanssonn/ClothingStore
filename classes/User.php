@@ -9,13 +9,7 @@
 
         public function registerUser($username, $email, $password, $password_2){
             global $errors;
-
-            // receive all input values from the form
-            $username    =  e($_POST['username']);
-            $email       =  e($_POST['email']);
-            $password  =  e($_POST['password_1']);
-            $password_2  =  e($_POST['password_2']);
-
+            
             // form validation: ensure that the form is correctly filled
             if (empty($username)) { 
                 array_push($errors, "Username is required"); 
@@ -41,7 +35,6 @@
                     $query->execute();
                     $_SESSION['success']  = "New user successfully created!!";
                     header('location: admin.php');
-                }else{
                     $query = $this->database->getConnection()->prepare("INSERT INTO users (username, email, user_type, password) 
                             VALUES('$username', '$email', 'user', '$passwordHash');");
                     $query->execute();
@@ -51,6 +44,7 @@
 
                     $_SESSION['user'] = $this->getUserById($logged_in_user_id); // put logged in user in session
                     $_SESSION['user']['username'] = $username;
+                    $_SESSION['user']['user_type'] = $user_type;
                     $_SESSION['success']  = "You are now logged in";
                     header('location: userPage.php');				
                 }
@@ -60,10 +54,6 @@
     public function login($username, $password){
         global $errors;
         
-		// grap form values
-		$username = e($_POST['username']);
-		$password = e($_POST['password']);
-
 		// make sure form is filled properly
 		if (empty($username)) {
 			array_push($errors, "Username is required");
@@ -75,24 +65,25 @@
 		if (count($errors) == 0) {
 			$passwordHash = md5($password);
 
-            $query = $this->database->getConnection()->prepare("SELECT * FROM users 
+            $query = $this->database->getConnection()->prepare("SELECT username, password, user_type FROM users 
                     WHERE username='$username' AND password='$passwordHash' LIMIT 1;");
             $result = $query->execute(); 
             
 			if ($query->rowCount($result) == 1) { // user found
 				// check if user is admin or user
-				$logged_in_user = $this->database->getConnection()->lastInsertId($result);
+				$logged_in_user = $query->fetch(PDO::FETCH_ASSOC);
 				if ($logged_in_user['user_type'] == 'admin') {
 
-					$_SESSION['user'] = $logged_in_user;
+                    $_SESSION['user'] = $logged_in_user;
                     $_SESSION['user']['username'] = $username;
 					$_SESSION['success']  = "You are now logged in";
 					header('location: admin.php');		  
 				}else{
-					$_SESSION['user'] = $logged_in_user;
+                    $_SESSION['user'] = $logged_in_user;
+                    $_SESSION['user']['username'] = $username;
 					$_SESSION['success']  = "You are now logged in";
 
-					header('location: index.php');
+					header('location: userPage.php');
 				}
 			}else {
 				array_push($errors, "Wrong username/password combination");
@@ -107,6 +98,14 @@
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
 		return $result;
+    }
+    public function isAdmin()
+	{
+		if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
 

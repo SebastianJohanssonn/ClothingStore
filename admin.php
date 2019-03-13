@@ -1,9 +1,10 @@
 <script src="script/adminScript.js"></script>
 <?php 
     include ('api/registerFunctions.php');
-    include ('includes/header.php') ;
+    include ('includes/header.php');
     
-    if (!isAdmin()) {
+    
+    if (!$userHandler->isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
     }

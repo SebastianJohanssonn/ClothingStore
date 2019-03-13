@@ -7,18 +7,28 @@
 	$db = mysqli_connect('localhost', 'root', '', 'clothingstore');
 	
 	// variable declaration
-	
+	$username;
+	$email;
+	$password;
+	$password_2;
+	$user_type;
 	$errors   = array();
 	$userHandler = new User(); 
 	
 	
 	// call the register() function if register_btn is clicked
 	if (isset($_POST['register_btn'])) {
+		$username    =  e($_POST['username']);
+        $email       =  e($_POST['email']);
+        $password    =  e($_POST['password_1']);
+        $password_2  =  e($_POST['password_2']);
 		$userHandler->registerUser($username, $email, $password, $password_2);
 	}
 
 	// call the login() function if _btn is clicked
 	if (isset($_POST['login_btn'])) {
+		$username = e($_POST['username']);
+		$password = e($_POST['password']);
 		$userHandler->login($username, $password);
 	}
 
@@ -37,15 +47,6 @@
 		$user = mysqli_fetch_assoc($result);
 		return $user;
 	} */
-
-	// returns the id of the logged in user
-	function getUserId() {
-		if (isset($_SESSION['user'])) {
-			return $_SESSION['user'];
-		}else{
-			return false;
-		}
-	}
 
 	// LOGIN USER
 	/* function login(){
@@ -82,7 +83,7 @@
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
 
-					header('location: userPage.php');
+					header('location: index.php');
 				}
 			}else {
 				array_push($errors, "Wrong username/password combination");
@@ -99,14 +100,14 @@
 		}
 	}
 
-	function isAdmin()
+	/* function isAdmin()
 	{
 		if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
 			return true;
 		}else{
 			return false;
 		}
-	}
+	} */
 
 	// escape string
 	function e($val){
