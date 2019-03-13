@@ -61,11 +61,11 @@ function updateNumberNextToCartIcon() {
 function displayShoppingCart(shoppingCart) {
     sortedProductIdList = getSortedProductIdList(shoppingCart);
     displayProductList(sortedProductIdList, shoppingCart);  
+    displayShippingOptions();
 }
 
 function displayProductList(sortedProductIdList, shoppingCart) {
     var nextProductId = sortedProductIdList.shift();
-    console.log(nextProductId);
     if(!isNaN(nextProductId)) {
         fetchHelper("api/get.php?productId="+nextProductId, "GET", (productInfo) => {
             if (shoppingCart[nextProductId] != null) {
@@ -168,4 +168,49 @@ function createDeleteButton(productInfo) {
     deleteButton.innerText = "Delete";
     deleteButton.setAttribute("onclick", "deleteFromShoppingcart(this)");
     return deleteButton;
+}
+
+function displayShippingOptions() {
+    $.ajax({
+        type: "POST",
+        url:"api/orderBackend.php",
+        data:{getShippingOptions: true},
+        success: function(data){
+            var json = JSON.parse(data);
+            for (var i = 0; i < json.length; i++) {
+                var courierName = json[i]["CourierName"];
+                var radioDiv = document.createElement("div");
+                $("#shippingOptions").append("<div class='radio'><label for='shippingOption'>" + courierName + "</label>");
+                var radioButton = document.createElement("input");
+                radioButton.setAttribute("type", "radio");
+                radioButton.setAttribute("name", "shippingOption");
+                radioButton.setAttribute("value", courierName);
+                radioButton.classList.add("shippingOption");
+                $("#shippingOptions").append(radioButton);
+                $("#shippingOptions").append("</div>");
+
+            }
+        }
+    });
+}
+
+function placeOrder() {
+    if ($("#divOfChosenProducts").children().length == 0) {
+        alert("You need to choose a product to place an order");
+    }
+    else if (($(".shippingOption").is(':checked')) && ($("#orderAdress").val() != "")) {
+        var shippingOption = $(".shippingOption:checked").val();
+        var adress = $("#orderAdress").val();
+        $.ajax({
+            type: "POST",
+            url:"api/orderBackend.php",
+            data:{adress: adress, shippingOption: shippingOption},
+            success: function(data){
+                alert("Purchase successful!");
+                location.reload();
+            }
+        });
+    } else {
+        alert("You have to select a shipping method and adress");
+    }
 }
