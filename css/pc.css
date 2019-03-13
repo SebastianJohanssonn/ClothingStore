@@ -188,6 +188,7 @@ button{
     width: 100%;
     object-position: center;
     padding-bottom: 0;
+    object-fit: cover;
 }
 
 .product-image-info {
