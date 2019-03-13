@@ -49,17 +49,17 @@
                     // get id of the created user
                     $logged_in_user_id = $this->database->getConnection()->lastInsertId($this->database->getConnection());
 
-                    $_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
+                    $_SESSION['user'] = $this->getUserById($logged_in_user_id); // put logged in user in session
                     $_SESSION['user']['username'] = $username;
                     $_SESSION['success']  = "You are now logged in";
-                    header('location: index.php');				
+                    header('location: userPage.php');				
                 }
 
             }
     }
     public function login($username, $password){
-		global $errors;
-
+        global $errors;
+        
 		// grap form values
 		$username = e($_POST['username']);
 		$password = e($_POST['password']);
@@ -85,6 +85,7 @@
 				if ($logged_in_user['user_type'] == 'admin') {
 
 					$_SESSION['user'] = $logged_in_user;
+                    $_SESSION['user']['username'] = $username;
 					$_SESSION['success']  = "You are now logged in";
 					header('location: admin.php');		  
 				}else{
