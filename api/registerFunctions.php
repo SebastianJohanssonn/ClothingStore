@@ -38,6 +38,15 @@
 		return $user;
 	} */
 
+	// returns the id of the logged in user
+	function getUserId() {
+		if (isset($_SESSION['user'])) {
+			return $_SESSION['user'];
+		}else{
+			return false;
+		}
+	}
+
 	// LOGIN USER
 	/* function login(){
 		global $db, $username, $errors;
@@ -73,7 +82,7 @@
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
 
-					header('location: index.php');
+					header('location: userPage.php');
 				}
 			}else {
 				array_push($errors, "Wrong username/password combination");
