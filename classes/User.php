@@ -10,6 +10,7 @@
         public function registerUser($username, $email, $password, $password_2){
             global $errors;
             
+            
             // form validation: ensure that the form is correctly filled
             if (empty($username)) { 
                 array_push($errors, "Username is required"); 
@@ -35,6 +36,7 @@
                     $query->execute();
                     $_SESSION['success']  = "New user successfully created!!";
                     header('location: admin.php');
+                }else{
                     $query = $this->database->getConnection()->prepare("INSERT INTO users (username, email, user_type, password) 
                             VALUES('$username', '$email', 'user', '$passwordHash');");
                     $query->execute();
@@ -44,7 +46,6 @@
 
                     $_SESSION['user'] = $this->getUserById($logged_in_user_id); // put logged in user in session
                     $_SESSION['user']['username'] = $username;
-                    $_SESSION['user']['user_type'] = $user_type;
                     $_SESSION['success']  = "You are now logged in";
                     header('location: userPage.php');				
                 }
