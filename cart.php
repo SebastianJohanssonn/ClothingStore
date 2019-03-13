@@ -6,6 +6,7 @@
         
     </div>
     <div>
+        <div><p id="totalprice"></p></div>
         <h2>Shipping</h2>
         <div id="shippingOptions">
 
