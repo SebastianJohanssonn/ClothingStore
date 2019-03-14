@@ -33,19 +33,16 @@ function viewOrders(){
             var tdOrderId = document.createElement("td");
             var tdCourierId = document.createElement("td");
             var tdAdressId = document.createElement("td");
-            var tdProductId = document.createElement("td");
             var tdUserId = document.createElement("td");
             
             tableRow.appendChild(tdOrderId);
             tableRow.appendChild(tdCourierId);
             tableRow.appendChild(tdAdressId);
-            tableRow.appendChild(tdProductId);
             tableRow.appendChild(tdUserId);
 
             tdOrderId.innerText = order.orderID;
-            tdCourierId.innerText = order.courierID;
-            tdAdressId.innerText = order.adressID;
-            tdProductId.innerText = order.productID;
+            tdCourierId.innerText = order.courierName;
+            tdAdressId.innerText = order.adress;
             tdUserId.innerText = order.UserID;
 
             orderTable.appendChild(tableRow);

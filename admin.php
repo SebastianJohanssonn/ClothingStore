@@ -22,9 +22,8 @@
             <table id ="orders">
                 <tr>
                     <th>OrderID</th>
-                    <th>CourierID</th>
-                    <th>AdressID</th>
-                    <th>ProductID</th>
+                    <th>CourierName</th>
+                    <th>Adress</th>
                     <th>UserID</th>
                 </tr>
                 <!-- Rows will inserted here -->
