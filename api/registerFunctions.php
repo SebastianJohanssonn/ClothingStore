@@ -3,9 +3,6 @@
 	session_start();
 	include ("./classes/User.php");
 	
-	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'clothingstore');
-	
 	// variable declaration
 	$username;
 	$email;
@@ -18,17 +15,17 @@
 	
 	// call the register() function if register_btn is clicked
 	if (isset($_POST['register_btn'])) {
-		$username    =  e($_POST['username']);
-        $email       =  e($_POST['email']);
-        $password    =  e($_POST['password_1']);
-        $password_2  =  e($_POST['password_2']);
+		$username    =  $_POST['username'];
+        $email       =  $_POST['email'];
+        $password    =  $_POST['password_1'];
+        $password_2  =  $_POST['password_2'];
 		$userHandler->registerUser($username, $email, $password, $password_2);
 	}
 
 	// call the login() function if _btn is clicked
 	if (isset($_POST['login_btn'])) {
-		$username = e($_POST['username']);
-		$password = e($_POST['password']);
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 		$userHandler->login($username, $password);
 	}
 
@@ -36,14 +33,6 @@
 		session_destroy();
 		unset($_SESSION['user']);
 		header("location: ../login.php");
-	}
-
-	
-
-	// escape string
-	function e($val){
-		global $db;
-		return mysqli_real_escape_string($db, trim($val));
 	}
 
 	function display_error() {
