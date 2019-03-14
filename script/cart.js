@@ -37,6 +37,7 @@ function deleteFromShoppingcart(deleteProductButton) {
     fetchHelper("api/cartBackend.php", "DELETE", (shoppingCart) => {
         updateNumberOfChosenProducts(shoppingCart);
         removeProductDivIfDoesntExist(productId, shoppingCart);
+        updateTotalPrice();
     }, queryString);
 }
 
@@ -57,6 +58,20 @@ function getAndDisplayShoppingcart() {
 function updateNumberNextToCartIcon() {
     fetchHelper("api/cartBackend.php", "GET", (shoppingCart) => {
         addAllChosenProducts(shoppingCart);
+    });
+}
+
+function updateTotalPrice() {
+    fetchHelper("api/cartBackend.php", "GET", (shoppingCart) => {
+        totalPrice = 0;
+        for (var productId in shoppingCart)
+        {
+            if(!isNaN(productId)) {
+                fetchHelper("api/get.php?productId="+productId, "GET", (productInfo) => {
+                    addToTotalPrice(productInfo, shoppingCart);
+                });
+            } 
+        }
     });
 }
 
