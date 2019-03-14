@@ -2,7 +2,7 @@
     include ('api/registerFunctions.php');
     include ('includes/header.php') ;
     
-    if (!isAdmin()) {
+    if (!$userHandler->isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
     }
@@ -18,11 +18,11 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
+			<input type="text" name="username">
 		</div>
 		<div class="input-group">
 			<label>Email</label>
-			<input type="email" name="email" value="<?php echo $email; ?>">
+			<input type="email" name="email">
 		</div>
 		<div class="input-group">
 			<label>User type</label>

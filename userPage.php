@@ -1,6 +1,6 @@
 <?php 
 include('api/registerFunctions.php');
-if (!isLoggedIn()) {
+if (!$userHandler->isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
     }

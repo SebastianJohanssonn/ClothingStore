@@ -17,13 +17,17 @@
         }
 
         public function createSubscriber($email, $name){
+
+            if(empty($name) || empty($email)){
+                return "Name or email is not filled in.";
+            }
             
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 return "Ingen giltig emailadress.";
             }
 
             $query = $this->database->getConnection()->prepare("SELECT email FROM newsletter
-            WHERE email = '.$email.';");
+            WHERE email = '$email';");
             $query->execute();
             if($query->rowCount() > 0){
                 return "This email already exists.";
@@ -31,7 +35,7 @@
 
             $query2 = $this->database->getConnection()->prepare("INSERT INTO newsletter
             (email, name)
-            VALUES ('.$email.', '.$name.');");
+            VALUES ('$email', '$name');");
             $result = $query2->execute();
             if(!empty($result)){
                 return "You are now registered!";
