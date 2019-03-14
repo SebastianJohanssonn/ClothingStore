@@ -38,14 +38,7 @@
 		header("location: ../login.php");
 	}
 
-	function isLoggedIn()
-	{
-		if (isset($_SESSION['user'])) {
-			return true;
-		}else{
-			return false;
-		}
-	}
+	
 
 	// escape string
 	function e($val){
