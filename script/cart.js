@@ -1,4 +1,6 @@
 
+var totalPrice = 0;
+
 function fetchHelper(url, method, callback, queryString = "") {
 
     if (queryString != "") {
@@ -97,6 +99,20 @@ function addProductToProductContainerDiv(productInfo, shoppingCart) {
 
     var productContainer = document.getElementById("divOfChosenProducts");
     productContainer.appendChild(chosenProduct);
+
+    addToTotalPrice(productInfo, shoppingCart);
+}
+
+function addToTotalPrice(productInfo, shoppingCart) {
+    var productId = productInfo["productId"];
+    var quantity = shoppingCart[productId];
+    var unitPrice = productInfo["price"];
+
+    var price = quantity * unitPrice;
+
+    totalPrice += price;
+    var priceTag = document.getElementById("totalprice");
+    priceTag.innerText = "Total price: " + totalPrice + " kr";
 }
 
 function createProductDiv() {
