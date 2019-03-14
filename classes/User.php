@@ -46,6 +46,7 @@
 
                     $_SESSION['user'] = $this->getUserById($logged_in_user_id); // put logged in user in session
                     $_SESSION['user']['username'] = $username;
+                    $_SESSION['user']['user_type'] = "User";
                     $_SESSION['success']  = "You are now logged in";
                     header('location: userPage.php');				
                 }
@@ -94,7 +95,7 @@
     public function getUserById($id){
 		global $db;
 		$query = $this->database->getConnection()->prepare("SELECT * FROM users 
-        WHERE id=' . $id.';");
+        WHERE id=' $id';");
         $query->execute();
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
