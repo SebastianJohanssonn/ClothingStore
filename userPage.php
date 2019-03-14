@@ -10,7 +10,7 @@ if (!isLoggedIn()) {
     <div class="mainBody">
 
     <h1>User Page</h1>
-    <h2> In develoment
+    <h2> Development </h2>
        
         
     </div>
