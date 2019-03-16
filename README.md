@@ -38,4 +38,5 @@ Besökare ska kunna välja ett av flera fraktalternativ (G) När du gör bestäl
 
 Tillgängliga fraktalternativ ska vara hämtade från databasen (G) Allt hämtas från databasen
 
+Live: www.anelpoturovic.se
 
