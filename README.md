@@ -1,5 +1,5 @@
 # ClothingStore
-Projektarbete PHP
+Projektarbete i PHP som jag var med och skapade tillsammans med min grupp.
 
 Uppnåda Krav :
 Alla sidor skall vara responsiva. (G) Done 
